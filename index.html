@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNU Workshop for Representation Theory 2026</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        snu: {
+                            navy: '#0f1e36',
+                            gold: '#f3ad1b',
+                            blue: '#1e3a8a',
+                            light: '#f8fafc',
+                            gray: '#64748b'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans KR', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:ital,wght=0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .academic-serif {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col justify-between">
+
+    <!-- 1. Header & Navigation (SPA 탭 구조 구현) -->
+    <header class="bg-snu-navy text-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo / Title -->
+            <a href="#" onclick="switchTab('main')" class="flex items-center gap-3">
+                <div class="text-snu-gold text-2xl">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div>
+                    <span class="font-bold text-lg tracking-tight block">SNU WRT 2026</span>
+                    <span class="text-xs text-slate-300 block font-light -mt-1">QSMS Representation Theory</span>
+                </div>
+            </a>
+            
+            <!-- Navigation Tabs -->
+            <nav class="flex items-center gap-6 text-sm font-medium">
+                <button id="nav-main" onclick="switchTab('main')" class="text-snu-gold hover:text-white transition-colors cursor-pointer">Main</button>
+                <button id="nav-timetable" onclick="switchTab('timetable')" class="text-slate-300 hover:text-white transition-colors cursor-pointer">Timetable</button>
+                <button id="nav-abstracts" onclick="switchTab('abstracts')" class="text-slate-300 hover:text-white transition-colors cursor-pointer">Titles & Abstracts</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 2. Main Content Container -->
+    <main class="flex-grow">
+        
+        <!-- ================= PAGE: MAIN ================= -->
+        <div id="page-main" class="tab-content">
+            <!-- [HERO BANNER] -->
+            <section class="bg-gradient-to-br from-snu-navy via-[#112444] to-[#1e345c] text-white py-20 px-6 relative overflow-hidden">
+                <div class="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
+                <div class="max-w-4xl mx-auto text-center relative z-10">
+                    <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight mb-6">
+                        SNU Workshop for <br>
+                        <span class="academic-serif text-snu-gold italic">Representation Theory</span> and Related Topics
+                    </h1>
+
+                    <!-- Date & Info Badges -->
+                    <div class="flex flex-wrap justify-center gap-4 max-w-xl mx-auto mt-8 text-sm">
+                        <div class="bg-white/10 backdrop-blur-md px-5 py-3 rounded-xl border border-white/10 flex items-center gap-3">
+                            <i class="fa-regular fa-calendar text-snu-gold"></i>
+                            <span class="font-medium text-white">July 27 – 29, 2026</span>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-md px-5 py-3 rounded-xl border border-white/10 flex items-center gap-3">
+                            <i class="fa-solid fa-hotel text-snu-gold"></i>
+                            <span class="font-medium text-white">Incheon National University</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- [SPEAKERS SECTION] -->
+            <section class="max-w-6xl mx-auto px-6 py-16">
+                <div class="flex items-center gap-3 mb-8 border-b border-slate-200 pb-4">
+                    <i class="fa-solid fa-users text-2xl text-snu-navy"></i>
+                    <h2 class="text-2xl font-bold text-snu-navy">Speakers</h2>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <!-- Speaker 1 -->
+                    <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
+                        <h3 class="font-bold text-lg text-slate-800">이승빈</h3>
+                        <p class="text-sm text-slate-500 mt-1">서울대학교</p>
+                    </div>
+                    <!-- Speaker 2 -->
+                    <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
+                        <h3 class="font-bold text-lg text-slate-800">오동건</h3>
+                        <p class="text-sm text-slate-500 mt-1">서울대학교</p>
+                    </div>
+                    <!-- Speaker 3 -->
+                    <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
+                        <h3 class="font-bold text-lg text-slate-800">천지원</h3>
+                        <p class="text-sm text-slate-500 mt-1">서울대학교</p>
+                    </div>
+                    <!-- Speaker 4 -->
+                    <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
+                        <h3 class="font-bold text-lg text-slate-800">이소연</h3>
+                        <p class="text-sm text-slate-500 mt-1">서울대학교</p>
+                    </div>
+                    <!-- Speaker 5 -->
+                    <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
+                        <h3 class="font-bold text-lg text-slate-800">우루노아끼또</h3>
+                        <p class="text-sm text-slate-500 mt-1">NCTS</p>
+                    </div>
+                    <!-- Speaker 6 -->
+                    <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
+                        <h3 class="font-bold text-lg text-slate-800">최동준</h3>
+                        <p class="text-sm text-slate-500 mt-1">서울대학교</p>
+                    </div>
+                    <!-- Speaker 7 -->
+                    <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
+                        <h3 class="font-bold text-lg text-slate-800">윤상원</h3>
+                        <p class="text-sm text-slate-500 mt-1">서울대학교</p>
+                    </div>
+                    <!-- Speaker 8 -->
+                    <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
+                        <h3 class="font-bold text-lg text-slate-800">Sylvain Carpentier</h3>
+                        <p class="text-sm text-slate-500 mt-1">서울대학교</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- [ORGANIZERS SECTION] -->
+            <section class="bg-slate-100/50 border-t border-b border-slate-200 py-16">
+                <div class="max-w-6xl mx-auto px-6">
+                    <div class="flex items-center gap-3 mb-8 border-b border-slate-200 pb-4">
+                        <i class="fa-solid fa-user-gear text-2xl text-snu-navy"></i>
+                        <h2 class="text-2xl font-bold text-snu-navy">Organizers</h2>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4 max-w-sm">
+                        <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm">
+                            <h3 class="font-bold text-lg text-slate-800">권재훈</h3>
+                            <p class="text-xs text-slate-500 mt-1">서울대학교</p>
+                        </div>
+                        <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm">
+                            <h3 class="font-bold text-lg text-slate-800">서의린</h3>
+                            <p class="text-xs text-slate-500 mt-1">서울대학교</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- [VENUE SECTION with Real map URL] -->
+            <section class="max-w-6xl mx-auto px-6 py-16">
+                <div class="flex items-center gap-3 mb-10 border-b border-slate-200 pb-4">
+                    <i class="fa-solid fa-map-location-dot text-2xl text-snu-navy"></i>
+                    <h2 class="text-2xl font-bold text-snu-navy">Venue</h2>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-8 items-stretch">
+                    <!-- Location Descriptions & Buttons -->
+                    <div class="lg:col-span-5 space-y-6 flex flex-col justify-between">
+                        <div class="space-y-6">
+                            <!-- Lecture Room -->
+                            <div class="border-l-4 border-snu-gold pl-4 space-y-3">
+                                <h3 class="text-lg font-bold text-snu-navy uppercase tracking-wider">Lecture room</h3>
+                                <div class="space-y-1">
+                                    <h4 class="font-bold text-slate-800 text-lg">Incheon National University</h4>
+                                    <p class="text-sm text-slate-600">College of Natural Sciences, room 335 (자연과학대학 5호관 335호)</p>
+                                    <p class="text-xs text-slate-400">Address: 인천광역시 연수구 아카데미로 119</p>
+                                </div>
+                                <!-- 지도에서 찾기 버튼 -->
+                                <a href="https://maps.google.com/?q=인천대학교+송도캠퍼스+자연과학대학" target="_blank" class="inline-flex items-center gap-2 bg-snu-navy hover:bg-snu-blue text-white text-xs font-medium px-4 py-2 rounded-lg transition-colors shadow-sm">
+                                    <i class="fa-solid fa-location-crosshairs text-snu-gold"></i>
+                                    인천대학교 지도에서 바로찾기
+                                </a>
+                            </div>
+
+                            <!-- Accommodation -->
+                            <div class="border-l-4 border-slate-400 pl-4 space-y-3">
+                                <h3 class="text-lg font-bold text-slate-500 uppercase tracking-wider">Accommodation</h3>
+                                <div class="space-y-1">
+                                    <h4 class="font-bold text-slate-800 text-lg">Bridge Hotel Incheon Songdo</h4>
+                                    <p class="text-sm">
+                                        Website: <a href="http://bridgehotelincheonsongdo.com" target="_blank" class="text-blue-600 hover:underline inline-flex items-center">http://bridgehotelincheonsongdo.com</a>
+                                    </p>
+                                    <p class="text-xs text-slate-400">Address: 인천광역시 연수구 컨벤시아대로 233</p>
+                                </div>
+                                <!-- 지도에서 찾기 버튼 -->
+                                <a href="https://maps.google.com/?q=브릿지호텔+인천+송도" target="_blank" class="inline-flex items-center gap-2 bg-slate-700 hover:bg-slate-800 text-white text-xs font-medium px-4 py-2 rounded-lg transition-colors shadow-sm">
+                                    <i class="fa-solid fa-bed text-snu-gold"></i>
+                                    브릿지 호텔 지도에서 바로찾기
+                                </a>
+                            </div>
+
+                            <!-- Banquet (To be announced) -->
+                            <div class="border-l-4 border-slate-300 pl-4 space-y-2 opacity-60">
+                                <h3 class="text-lg font-bold text-slate-400 uppercase tracking-wider">Banquet</h3>
+                                <div class="space-y-1">
+                                    <p class="text-sm text-slate-500 italic">To be announced</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Google Map Iframe -->
+                    <div class="lg:col-span-7 min-h-[400px] h-full rounded-2xl overflow-hidden shadow-sm border border-slate-200">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.3082643594834!2d126.62649987637848!3d37.382585234237785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b901f40d12c8b%3A0xe7f920f26941a8de!2z7J247L someIOuMgO2Zmeq1kCDsh6PhgYTrgqTrmZTrjIA!5e0!3m2!1sko!2skr!4v1700000000000" 
+                            class="w-full h-full min-h-[400px] border-0"
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </section>
+
+            <!-- [SUPPORT SECTION] -->
+            <section class="bg-slate-950 text-white py-16">
+                <div class="max-w-6xl mx-auto px-6 text-center space-y-8">
+                    <h2 class="text-xs font-bold tracking-widest text-snu-gold uppercase">Supported By</h2>
+                    
+                    <!-- Logo Grid Container -->
+                    <div class="flex flex-wrap justify-center items-center gap-6 md:gap-8 max-w-4xl mx-auto">
+                        <!-- QSMS Logo Card -->
+                        <div class="bg-white/5 border border-white/10 px-8 py-4 rounded-xl flex items-center justify-center min-w-[240px] h-24 hover:border-white/20 transition-colors">
+                            <div class="text-center">
+                                <span class="font-bold text-lg tracking-wider text-slate-200 block">QSMS</span>
+                                <span class="text-[10px] text-slate-400 block mt-0.5 leading-relaxed">Center for Quantum Structures in Modules and Spaces, SNU</span>
+                            </div>
+                        </div>
+
+                        <!-- 추가 기관/센터용 비어있는 대기 플레이스홀더 (Add Logo) -->
+                        <div class="border border-dashed border-white/10 px-8 py-4 rounded-xl flex items-center justify-center min-w-[240px] h-24 text-slate-500 hover:border-white/20 hover:text-slate-400 transition-all cursor-pointer group">
+                            <div class="text-center">
+                                <i class="fa-solid fa-plus text-sm mb-1 group-hover:scale-110 transition-transform"></i>
+                                <span class="text-[11px] block font-medium">Add Institution Logo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- ================= PAGE: TIMETABLE ================= -->
+        <div id="page-timetable" class="tab-content hidden max-w-6xl mx-auto px-6 py-12">
+            <div class="flex items-center gap-3 mb-8 border-b border-slate-200 pb-4">
+                <i class="fa-regular fa-clock text-2xl text-snu-navy"></i>
+                <h2 class="text-2xl font-bold text-snu-navy">Workshop Timetable</h2>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Day 1: July 27 (Monday) -->
+                <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm">
+                    <div class="border-b border-slate-100 pb-3 mb-4 flex justify-between items-center">
+                        <h3 class="font-bold text-lg text-snu-navy">Day 1</h3>
+                        <span class="text-xs font-semibold px-2.5 py-1 bg-snu-navy/10 text-snu-navy rounded-full">July 27 (Mon)</span>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="border-l-2 border-snu-gold pl-3">
+                            <span class="text-xs text-slate-400 font-medium">13:30 - 14:20</span>
+                            <h4 class="font-bold text-slate-800 text-sm">Session 1</h4>
+                            <p class="text-xs text-slate-500 mt-0.5">이승빈 (서울대학교)</p>
+                        </li>
+                        <li class="bg-slate-50 rounded-lg p-2.5 flex items-center justify-between text-xs text-slate-500 border border-slate-100">
+                            <span class="font-semibold text-slate-600"><i class="fa-solid fa-mug-hot mr-1.5 text-amber-500"></i>Coffee Break</span>
+                            <span>14:20 - 14:40</span>
+                        </li>
+                        <li class="border-l-2 border-snu-gold pl-3">
+                            <span class="text-xs text-slate-400 font-medium">14:40 - 15:30</span>
+                            <h4 class="font-bold text-slate-800 text-sm">Session 2</h4>
+                            <p class="text-xs text-slate-500 mt-0.5">오동건 (서울대학교)</p>
+                        </li>
+                        <li class="bg-slate-50 rounded-lg p-2.5 flex items-center justify-between text-xs text-slate-500 border border-slate-100">
+                            <span class="font-semibold text-slate-600"><i class="fa-solid fa-mug-hot mr-1.5 text-amber-500"></i>Coffee Break</span>
+                            <span>15:30 - 15:50</span>
+                        </li>
+                        <li class="border-l-2 border-snu-gold pl-3">
+                            <span class="text-xs text-slate-400 font-medium">15:50 - 16:40</span>
+                            <h4 class="font-bold text-slate-800 text-sm">Session 3</h4>
+                            <p class="text-xs text-slate-500 mt-0.5">천지원 (서울대학교)</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Day 2: July 28 (Tuesday) -->
+                <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm">
+                    <div class="border-b border-slate-100 pb-3 mb-4 flex justify-between items-center">
+                        <h3 class="font-bold text-lg text-snu-navy">Day 2</h3>
+                        <span class="text-xs font-semibold px-2.5 py-1 bg-snu-gold/20 text-snu-gold rounded-full">July 28 (Tue)</span>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="border-l-2 border-slate-400 pl-3">
+                            <span class="text-xs text-slate-400 font-medium">09:30 - 10:20</span>
+                            <h4 class="font-bold text-slate-800 text-sm">Session 4</h4>
+                            <p class="text-xs text-slate-500 mt-0.5">이소연 (서울대학교)</p>
+                        </li>
+                        <li class="bg-slate-50 rounded-lg p-2.5 flex items-center justify-between text-xs text-slate-500 border border-slate-100">
+                            <span class="font-semibold text-slate-600"><i class="fa-solid fa-mug-hot mr-1.5 text-amber-500"></i>Coffee Break</span>
+                            <span>10:20 - 10:40</span>
+                        </li>
+                        <li class="border-l-2 border-slate-400 pl-3">
+                            <span class="text-xs text-slate-400 font-medium">10:40 - 11:30</span>
+                            <h4 class="font-bold text-slate-800 text-sm">Session 5</h4>
+                            <p class="text-xs text-slate-500 mt-0.5">우루노아끼또 (NCTS)</p>
+                        </li>
+                        <li class="bg-blue-50/50 rounded-xl p-3 flex flex-col items-center justify-center text-xs text-slate-500 border border-blue-100/60 my-2">
+                            <span class="font-bold text-blue-900 inline-flex items-center gap-1.5 mb-0.5">
+                                <i class="fa-solid fa-bowl-food text-blue-600"></i> Lunch Break
+                            </span>
+                            <span class="text-[10px] text-slate-400">11:30 - 13:30 (2 Hours)</span>
+                        </li>
+                        <li class="border-l-2 border-slate-400 pl-3">
+                            <span class="text-xs text-slate-400 font-medium">13:30 - 14:20</span>
+                            <h4 class="font-bold text-slate-800 text-sm">Session 6</h4>
+                            <p class="text-xs text-slate-500 mt-0.5">최동준 (서울대학교)</p>
+                        </li>
+                        <li class="bg-slate-50 rounded-lg p-2.5 flex items-center justify-between text-xs text-slate-500 border border-slate-100">
+                            <span class="font-semibold text-slate-600"><i class="fa-solid fa-mug-hot mr-1.5 text-amber-500"></i>Coffee Break</span>
+                            <span>14:20 - 14:40</span>
+                        </li>
+                        <li class="border-l-2 border-slate-400 pl-3">
+                            <span class="text-xs text-slate-400 font-medium">14:40 - 15:30</span>
+                            <h4 class="font-bold text-slate-800 text-sm">Session 7</h4>
+                            <p class="text-xs text-slate-500 mt-0.5">윤상원 (서울대학교)</p>
+                        </li>
+                        <li class="bg-slate-50 rounded-lg p-2.5 flex items-center justify-between text-xs text-slate-500 border border-slate-100">
+                            <span class="font-semibold text-slate-600"><i class="fa-solid fa-mug-hot mr-1.5 text-amber-500"></i>Coffee Break</span>
+                            <span>15:30 - 15:50</span>
+                        </li>
+                        <li class="border-l-2 border-slate-400 pl-3">
+                            <span class="text-xs text-slate-400 font-medium">15:50 - 16:40</span>
+                            <h4 class="font-bold text-slate-800 text-sm">Session 8</h4>
+                            <p class="text-xs text-slate-500 mt-0.5">Sylvain Carpentier (서울대학교)</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Day 3: July 29 (Wednesday) -->
+                <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="border-b border-slate-100 pb-3 mb-4 flex justify-between items-center">
+                            <h3 class="font-bold text-lg text-snu-navy">Day 3</h3>
+                            <span class="text-xs font-semibold px-2.5 py-1 bg-emerald-100 text-emerald-800 rounded-full">July 29 (Wed)</span>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="bg-slate-50 border border-slate-200/60 rounded-xl p-4 text-center py-10">
+                                <i class="fa-solid fa-comments text-3xl text-slate-300 mb-3 block"></i>
+                                <h4 class="font-bold text-slate-800">Free Discussion</h4>
+                                <p class="text-xs text-slate-400 mt-1 max-w-xs mx-auto">Open discussion on representation theory and related collaborative topics.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ================= PAGE: TITLES & ABSTRACTS ================= -->
+        <div id="page-abstracts" class="tab-content hidden max-w-4xl mx-auto px-6 py-12">
+            <div class="flex items-center gap-3 mb-8 border-b border-slate-200 pb-4">
+                <i class="fa-solid fa-book-open text-2xl text-snu-navy"></i>
+                <h2 class="text-2xl font-bold text-snu-navy">Titles & Abstracts</h2>
+            </div>
+
+            <!-- List of 8 Speaker Card Blocks with Title & Abstract placeholder -->
+            <div class="space-y-6">
+                <!-- 1 -->
+                <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold text-xl text-snu-navy">이승빈 <span class="text-sm text-slate-400 font-normal ml-2">| 서울대학교</span></h3>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="font-semibold text-slate-800">Title of the presentation</h4>
+                        <p class="text-sm text-slate-500 leading-relaxed font-light">Abstract details will be updated soon.</p>
+                    </div>
+                </div>
+
+                <!-- 2 -->
+                <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold text-xl text-snu-navy">오동건 <span class="text-sm text-slate-400 font-normal ml-2">| 서울대학교</span></h3>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="font-semibold text-slate-800">Title of the presentation</h4>
+                        <p class="text-sm text-slate-500 leading-relaxed font-light">Abstract details will be updated soon.</p>
+                    </div>
+                </div>
+
+                <!-- 3 -->
+                <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold text-xl text-snu-navy">천지원 <span class="text-sm text-slate-400 font-normal ml-2">| 서울대학교</span></h3>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="font-semibold text-slate-800">Title of the presentation</h4>
+                        <p class="text-sm text-slate-500 leading-relaxed font-light">Abstract details will be updated soon.</p>
+                    </div>
+                </div>
+
+                <!-- 4 -->
+                <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold text-xl text-snu-navy">이소연 <span class="text-sm text-slate-400 font-normal ml-2">| 서울대학교</span></h3>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="font-semibold text-slate-800">Title of the presentation</h4>
+                        <p class="text-sm text-slate-500 leading-relaxed font-light">Abstract details will be updated soon.</p>
+                    </div>
+                </div>
+
+                <!-- 5 -->
+                <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold text-xl text-snu-navy">우루노아끼또 <span class="text-sm text-slate-400 font-normal ml-2">| NCTS</span></h3>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="font-semibold text-slate-800">Title of the presentation</h4>
+                        <p class="text-sm text-slate-500 leading-relaxed font-light">Abstract details will be updated soon.</p>
+                    </div>
+                </div>
+
+                <!-- 6 -->
+                <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold text-xl text-snu-navy">최동준 <span class="text-sm text-slate-400 font-normal ml-2">| 서울대학교</span></h3>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="font-semibold text-slate-800">Title of the presentation</h4>
+                        <p class="text-sm text-slate-500 leading-relaxed font-light">Abstract details will be updated soon.</p>
+                    </div>
+                </div>
+
+                <!-- 7 -->
+                <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold text-xl text-snu-navy">윤상원 <span class="text-sm text-slate-400 font-normal ml-2">| 서울대학교</span></h3>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="font-semibold text-slate-800">Title of the presentation</h4>
+                        <p class="text-sm text-slate-500 leading-relaxed font-light">Abstract details will be updated soon.</p>
+                    </div>
+                </div>
+
+                <!-- 8 -->
+                <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold text-xl text-snu-navy">Sylvain Carpentier <span class="text-sm text-slate-400 font-normal ml-2">| 서울대학교</span></h3>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="font-semibold text-slate-800">Title of the presentation</h4>
+                        <p class="text-sm text-slate-500 leading-relaxed font-light">Abstract details will be updated soon.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- JavaScript for Dynamic Tab Switching (SPA Routing) -->
+    <script>
+        function switchTab(tabId) {
+            // Hide all tab contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.classList.add('hidden');
+            });
+
+            // Show active tab content
+            const activePage = document.getElementById('page-' + tabId);
+            if (activePage) {
+                activePage.classList.remove('hidden');
+            }
+
+            // Reset navigation colors
+            const navIds = ['main', 'timetable', 'abstracts'];
+            navIds.forEach(id => {
+                const navBtn = document.getElementById('nav-' + id);
+                if (navBtn) {
+                    if (id === tabId) {
+                        navBtn.classList.remove('text-slate-300');
+                        navBtn.classList.add('text-snu-gold');
+                    } else {
+                        navBtn.classList.remove('text-snu-gold');
+                        navBtn.classList.add('text-slate-300');
+                    }
+                }
+            });
+
+            // Scroll back to top on switch
+            window.scrollTo({ top: 0, behavior: 'instant' });
+        }
+    </script>
+</body>
+</html>
