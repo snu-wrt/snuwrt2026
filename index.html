@@ -47,17 +47,16 @@
 </head>
 <body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col justify-between">
 
-    <!-- 1. Header & Navigation (SPA 탭 구조 구현) -->
+    <!-- 1. Header & Navigation -->
     <header class="bg-snu-navy text-white sticky top-0 z-50 shadow-md">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Logo / Title -->
+            <!-- Logo / Title (부제 제거 및 세로 중앙 정렬) -->
             <a href="#" onclick="switchTab('main')" class="flex items-center gap-3">
                 <div class="text-snu-gold text-2xl">
                     <i class="fa-solid fa-graduation-cap"></i>
                 </div>
                 <div>
                     <span class="font-bold text-lg tracking-tight block">SNU WRT 2026</span>
-                    <span class="text-xs text-slate-300 block font-light -mt-1">QSMS Representation Theory</span>
                 </div>
             </a>
             
@@ -128,7 +127,7 @@
                     </div>
                     <!-- Speaker 5 -->
                     <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
-                        <h3 class="font-bold text-lg text-slate-800">우루노아끼또</h3>
+                        <h3 class="font-bold text-lg text-slate-800">Uruno Akito</h3>
                         <p class="text-sm text-slate-500 mt-1">NCTS</p>
                     </div>
                     <!-- Speaker 6 -->
@@ -136,9 +135,9 @@
                         <h3 class="font-bold text-lg text-slate-800">최동준</h3>
                         <p class="text-sm text-slate-500 mt-1">서울대학교</p>
                     </div>
-                    <!-- Speaker 7 -->
+                    <!-- Speaker 7 (윤상원 -> 이재현) -->
                     <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
-                        <h3 class="font-bold text-lg text-slate-800">윤상원</h3>
+                        <h3 class="font-bold text-lg text-slate-800">이재현</h3>
                         <p class="text-sm text-slate-500 mt-1">서울대학교</p>
                     </div>
                     <!-- Speaker 8 -->
@@ -189,7 +188,6 @@
                                     <p class="text-sm text-slate-600">College of Natural Sciences, room 335 (자연과학대학 5호관 335호)</p>
                                     <p class="text-xs text-slate-400">Address: 인천광역시 연수구 아카데미로 119</p>
                                 </div>
-                                <!-- 지도에서 찾기 버튼 -->
                                 <a href="https://maps.google.com/?q=인천대학교+송도캠퍼스+자연과학대학" target="_blank" class="inline-flex items-center gap-2 bg-snu-navy hover:bg-snu-blue text-white text-xs font-medium px-4 py-2 rounded-lg transition-colors shadow-sm">
                                     <i class="fa-solid fa-location-crosshairs text-snu-gold"></i>
                                     인천대학교 지도에서 바로찾기
@@ -206,7 +204,6 @@
                                     </p>
                                     <p class="text-xs text-slate-400">Address: 인천광역시 연수구 컨벤시아대로 233</p>
                                 </div>
-                                <!-- 지도에서 찾기 버튼 -->
                                 <a href="https://maps.google.com/?q=브릿지호텔+인천+송도" target="_blank" class="inline-flex items-center gap-2 bg-slate-700 hover:bg-slate-800 text-white text-xs font-medium px-4 py-2 rounded-lg transition-colors shadow-sm">
                                     <i class="fa-solid fa-bed text-snu-gold"></i>
                                     브릿지 호텔 지도에서 바로찾기
@@ -241,7 +238,6 @@
                 <div class="max-w-6xl mx-auto px-6 text-center space-y-8">
                     <h2 class="text-xs font-bold tracking-widest text-snu-gold uppercase">Supported By</h2>
                     
-                    <!-- Logo Grid Container -->
                     <div class="flex flex-wrap justify-center items-center gap-6 md:gap-8 max-w-4xl mx-auto">
                         <!-- QSMS Logo Card -->
                         <div class="bg-white/5 border border-white/10 px-8 py-4 rounded-xl flex items-center justify-center min-w-[240px] h-24 hover:border-white/20 transition-colors">
@@ -251,7 +247,7 @@
                             </div>
                         </div>
 
-                        <!-- 추가 기관/센터용 비어있는 대기 플레이스홀더 (Add Logo) -->
+                        <!-- Add Logo Placeholder -->
                         <div class="border border-dashed border-white/10 px-8 py-4 rounded-xl flex items-center justify-center min-w-[240px] h-24 text-slate-500 hover:border-white/20 hover:text-slate-400 transition-all cursor-pointer group">
                             <div class="text-center">
                                 <i class="fa-solid fa-plus text-sm mb-1 group-hover:scale-110 transition-transform"></i>
@@ -324,7 +320,7 @@
                         <li class="border-l-2 border-slate-400 pl-3">
                             <span class="text-xs text-slate-400 font-medium">10:40 - 11:30</span>
                             <h4 class="font-bold text-slate-800 text-sm">Session 5</h4>
-                            <p class="text-xs text-slate-500 mt-0.5">우루노아끼또 (NCTS)</p>
+                            <p class="text-xs text-slate-500 mt-0.5">Uruno Akito (NCTS)</p>
                         </li>
                         <li class="bg-blue-50/50 rounded-xl p-3 flex flex-col items-center justify-center text-xs text-slate-500 border border-blue-100/60 my-2">
                             <span class="font-bold text-blue-900 inline-flex items-center gap-1.5 mb-0.5">
@@ -341,10 +337,11 @@
                             <span class="font-semibold text-slate-600"><i class="fa-solid fa-mug-hot mr-1.5 text-amber-500"></i>Coffee Break</span>
                             <span>14:20 - 14:40</span>
                         </li>
+                        <!-- Session 7 (윤상원 -> 이재현) -->
                         <li class="border-l-2 border-slate-400 pl-3">
                             <span class="text-xs text-slate-400 font-medium">14:40 - 15:30</span>
                             <h4 class="font-bold text-slate-800 text-sm">Session 7</h4>
-                            <p class="text-xs text-slate-500 mt-0.5">윤상원 (서울대학교)</p>
+                            <p class="text-xs text-slate-500 mt-0.5">이재현 (서울대학교)</p>
                         </li>
                         <li class="bg-slate-50 rounded-lg p-2.5 flex items-center justify-between text-xs text-slate-500 border border-slate-100">
                             <span class="font-semibold text-slate-600"><i class="fa-solid fa-mug-hot mr-1.5 text-amber-500"></i>Coffee Break</span>
@@ -385,7 +382,7 @@
                 <h2 class="text-2xl font-bold text-snu-navy">Titles & Abstracts</h2>
             </div>
 
-            <!-- List of 8 Speaker Card Blocks with Title & Abstract placeholder -->
+            <!-- List of 8 Speaker Card Blocks -->
             <div class="space-y-6">
                 <!-- 1 -->
                 <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-shadow">
@@ -434,7 +431,7 @@
                 <!-- 5 -->
                 <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-shadow">
                     <div class="flex justify-between items-start mb-2">
-                        <h3 class="font-bold text-xl text-snu-navy">우루노아끼또 <span class="text-sm text-slate-400 font-normal ml-2">| NCTS</span></h3>
+                        <h3 class="font-bold text-xl text-snu-navy">Uruno Akito <span class="text-sm text-slate-400 font-normal ml-2">| NCTS</span></h3>
                     </div>
                     <div class="space-y-2">
                         <h4 class="font-semibold text-slate-800">Title of the presentation</h4>
@@ -453,10 +450,10 @@
                     </div>
                 </div>
 
-                <!-- 7 -->
+                <!-- 7 (윤상원 -> 이재현) -->
                 <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-shadow">
                     <div class="flex justify-between items-start mb-2">
-                        <h3 class="font-bold text-xl text-snu-navy">윤상원 <span class="text-sm text-slate-400 font-normal ml-2">| 서울대학교</span></h3>
+                        <h3 class="font-bold text-xl text-snu-navy">이재현 <span class="text-sm text-slate-400 font-normal ml-2">| 서울대학교</span></h3>
                     </div>
                     <div class="space-y-2">
                         <h4 class="font-semibold text-slate-800">Title of the presentation</h4>
