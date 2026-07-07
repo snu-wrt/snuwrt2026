@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SNU Workshop for Representation Theory 2026</title>
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -29,7 +28,6 @@
         }
     </script>
     
-    <!-- Google Fonts & FontAwesome Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:ital,wght=0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -47,10 +45,8 @@
 </head>
 <body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col justify-between">
 
-    <!-- 1. Header & Navigation -->
     <header class="bg-snu-navy text-white sticky top-0 z-50 shadow-md">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Logo / Title -->
             <a href="#" onclick="switchTab('main')" class="flex items-center gap-3">
                 <div class="text-snu-gold text-2xl">
                     <i class="fa-solid fa-graduation-cap"></i>
@@ -60,21 +56,18 @@
                 </div>
             </a>
             
-            <!-- Navigation Tabs -->
             <nav class="flex items-center gap-6 text-sm font-medium">
-                <button id="nav-main" onclick="switchTab('main')" class="text-snu-gold hover:text-white transition-colors cursor-pointer">Main</button>
-                <button id="nav-timetable" onclick="switchTab('timetable')" class="text-slate-300 hover:text-white transition-colors cursor-pointer">Timetable</button>
-                <button id="nav-abstracts" onclick="switchTab('abstracts')" class="text-slate-300 hover:text-white transition-colors cursor-pointer">Titles & Abstracts</button>
+                <button id="nav-main" onclick="switchTab('main')", class="text-snu-gold hover:text-white transition-colors cursor-pointer">Main</button>
+                <button id="nav-poster" onclick="switchTab('poster')", class="text-slate-300 hover:text-white transition-colors cursor-pointer">Poster</button>
+                <button id="nav-timetable" onclick="switchTab('timetable')", class="text-slate-300 hover:text-white transition-colors cursor-pointer">Timetable</button>
+                <button id="nav-abstracts" onclick="switchTab('abstracts')", class="text-slate-300 hover:text-white transition-colors cursor-pointer">Titles & Abstracts</button>
             </nav>
         </div>
     </header>
 
-    <!-- 2. Main Content Container -->
     <main class="flex-grow">
         
-        <!-- ================= PAGE: MAIN ================= -->
         <div id="page-main" class="tab-content">
-            <!-- [HERO BANNER] -->
             <section class="bg-gradient-to-br from-snu-navy via-[#112444] to-[#1e345c] text-white py-20 px-6 relative overflow-hidden">
                 <div class="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
                 <div class="max-w-4xl mx-auto text-center relative z-10">
@@ -83,7 +76,6 @@
                         <span class="academic-serif text-snu-gold italic">Representation Theory</span> and Related Topics
                     </h1>
 
-                    <!-- Date & Info Badges -->
                     <div class="flex flex-wrap justify-center gap-4 max-w-xl mx-auto mt-8 text-sm">
                         <div class="bg-white/10 backdrop-blur-md px-5 py-3 rounded-xl border border-white/10 flex items-center gap-3">
                             <i class="fa-regular fa-calendar text-snu-gold"></i>
@@ -97,7 +89,6 @@
                 </div>
             </section>
 
-            <!-- [SPEAKERS SECTION] -->
             <section class="max-w-6xl mx-auto px-6 py-16">
                 <div class="flex items-center gap-3 mb-8 border-b border-slate-200 pb-4">
                     <i class="fa-solid fa-users text-2xl text-snu-navy"></i>
@@ -105,42 +96,34 @@
                 </div>
                 
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                    <!-- Speaker 1 -->
                     <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
                         <h3 class="font-bold text-lg text-slate-800">이승빈</h3>
                         <p class="text-sm text-slate-500 mt-1">서울대학교</p>
                     </div>
-                    <!-- Speaker 2 -->
                     <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
                         <h3 class="font-bold text-lg text-slate-800">이재현</h3>
                         <p class="text-sm text-slate-500 mt-1">서울대학교</p>
                     </div>
-                    <!-- Speaker 3 -->
                     <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
                         <h3 class="font-bold text-lg text-slate-800">오동건</h3>
                         <p class="text-sm text-slate-500 mt-1">서울대학교</p>
                     </div>
-                    <!-- Speaker 4 -->
                     <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
                         <h3 class="font-bold text-lg text-slate-800">천지원</h3>
                         <p class="text-sm text-slate-500 mt-1">서울대학교</p>
                     </div>
-                    <!-- Speaker 5 -->
                     <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
                         <h3 class="font-bold text-lg text-slate-800">최동준</h3>
                         <p class="text-sm text-slate-500 mt-1">서울대학교</p>
                     </div>
-                    <!-- Speaker 6 -->
                     <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
                         <h3 class="font-bold text-lg text-slate-800">이소연</h3>
                         <p class="text-sm text-slate-500 mt-1">서울대학교</p>
                     </div>
-                    <!-- Speaker 7 -->
                     <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
                         <h3 class="font-bold text-lg text-slate-800">Sylvain Carpentier</h3>
                         <p class="text-sm text-slate-500 mt-1">서울대학교</p>
                     </div>
-                    <!-- Speaker 8 -->
                     <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
                         <h3 class="font-bold text-lg text-slate-800">Akito Uruno</h3>
                         <p class="text-sm text-slate-500 mt-1">NCTS</p>
@@ -148,7 +131,6 @@
                 </div>
             </section>
 
-            <!-- [ORGANIZERS SECTION] -->
             <section class="bg-slate-100/50 border-t border-b border-slate-200 py-16">
                 <div class="max-w-6xl mx-auto px-6">
                     <div class="flex items-center gap-3 mb-8 border-b border-slate-200 pb-4">
@@ -169,7 +151,6 @@
                 </div>
             </section>
 
-            <!-- [VENUE SECTION with Real map URL] -->
             <section class="max-w-6xl mx-auto px-6 py-16">
                 <div class="flex items-center gap-3 mb-10 border-b border-slate-200 pb-4">
                     <i class="fa-solid fa-map-location-dot text-2xl text-snu-navy"></i>
@@ -177,10 +158,8 @@
                 </div>
 
                 <div class="grid lg:grid-cols-12 gap-8 items-stretch">
-                    <!-- Location Descriptions & Buttons -->
                     <div class="lg:col-span-5 space-y-6 flex flex-col justify-between">
                         <div class="space-y-6">
-                            <!-- Lecture Room -->
                             <div class="border-l-4 border-snu-gold pl-4 space-y-3">
                                 <h3 class="text-lg font-bold text-snu-navy uppercase tracking-wider">Lecture room</h3>
                                 <div class="space-y-1">
@@ -194,7 +173,6 @@
                                 </a>
                             </div>
 
-                            <!-- Accommodation -->
                             <div class="border-l-4 border-slate-400 pl-4 space-y-3">
                                 <h3 class="text-lg font-bold text-slate-500 uppercase tracking-wider">Accommodation</h3>
                                 <div class="space-y-1">
@@ -210,7 +188,6 @@
                                 </a>
                             </div>
 
-                            <!-- Banquet (To be announced) -->
                             <div class="border-l-4 border-slate-300 pl-4 space-y-2 opacity-60">
                                 <h3 class="text-lg font-bold text-slate-400 uppercase tracking-wider">Banquet</h3>
                                 <div class="space-y-1">
@@ -220,7 +197,6 @@
                         </div>
                     </div>
 
-                    <!-- Right Google Map Iframe -->
                     <div class="lg:col-span-7 min-h-[400px] h-full rounded-2xl overflow-hidden shadow-sm border border-slate-200">
                         <iframe 
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.3082643594834!2d126.62649987637848!3d37.382585234237785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b901f40d12c8b%3A0xe7f920f26941a8de!2z7J247L someIOuMgO2Zmeq1kCDsh6PhgYTrgqTrmZTrjIA!5e0!3m2!1sko!2skr!4v1700000000000" 
@@ -233,26 +209,49 @@
                 </div>
             </section>
 
-            <!-- [SUPPORT SECTION] (QSMS만 남기고 단독 정렬) -->
             <section class="bg-slate-950 text-white py-16">
                 <div class="max-w-6xl mx-auto px-6 text-center space-y-8">
                     <h2 class="text-xs font-bold tracking-widest text-snu-gold uppercase">Supported By</h2>
                     
-                    <div class="flex justify-center items-center max-w-4xl mx-auto">
-                        <!-- QSMS Logo Card -->
-                        <div class="bg-white/5 border border-white/10 px-8 py-4 rounded-xl flex items-center justify-center min-w-[240px] max-w-xs h-24 hover:border-white/20 transition-colors shadow-sm">
-                            <div class="text-center">
-                                <span class="font-bold text-lg tracking-wider text-slate-200 block">QSMS</span>
-                                <span class="text-[10px] text-slate-400 block mt-0.5 leading-relaxed">Center for Quantum Structures in Modules and Spaces, SNU</span>
-                            </div>
+                    <div class="flex flex-wrap justify-center items-center gap-6 max-w-4xl mx-auto">
+                        <div class="bg-white px-8 py-4 rounded-xl flex flex-col items-center justify-center w-72 h-28 shadow-md transition-transform hover:scale-[1.02]">
+                            <img src="images/logo-qsms.png" alt="QSMS Logo" class="max-h-12 max-w-full object-contain">
+                            <span class="text-[9px] text-slate-400 mt-2 block leading-tight">Center for Quantum Structures in Modules and Spaces</span>
+                        </div>
+
+                        <div class="bg-white px-8 py-4 rounded-xl flex flex-col items-center justify-center w-72 h-28 shadow-md transition-transform hover:scale-[1.02]">
+                            <img src="images/logo-inu.png" alt="Incheon National University Logo" class="max-h-12 max-w-full object-contain">
+                            <span class="text-[9px] text-slate-400 mt-2 block leading-tight">Incheon National University</span>
                         </div>
                     </div>
                 </div>
             </section>
         </div>
 
+        <div id="page-poster" class="tab-content hidden max-w-4xl mx-auto px-6 py-12">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 border-b border-slate-200 pb-4">
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-file-image text-2xl text-snu-navy"></i>
+                    <h2 class="text-2xl font-bold text-snu-navy">Workshop Poster</h2>
+                </div>
+                <a href="Poster.pdf" target="_blank" class="inline-flex items-center justify-center gap-2 bg-snu-navy hover:bg-snu-blue text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition-all shadow-sm hover:shadow">
+                    <i class="fa-solid fa-file-arrow-down text-snu-gold"></i>
+                    Download Original PDF
+                </a>
+            </div>
 
-        <!-- ================= PAGE: TIMETABLE ================= -->
+            <div class="bg-white rounded-3xl p-6 shadow-md border border-slate-200 text-center max-w-2xl mx-auto">
+                <div class="relative group overflow-hidden rounded-2xl border border-slate-100 bg-slate-50">
+                    <img src="images/poster.png" alt="SNU Workshop for Representation Theory 2026 Poster" class="w-full h-auto object-contain transition-transform duration-300 group-hover:scale-[1.005]">
+                    <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <a href="Poster.pdf" target="_blank" class="bg-white text-snu-navy font-bold px-6 py-3 rounded-xl shadow-lg flex items-center gap-2 text-sm hover:bg-slate-50 transition-colors">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i> Open Full Vector PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div id="page-timetable" class="tab-content hidden max-w-6xl mx-auto px-6 py-12">
             <div class="flex items-center gap-3 mb-8 border-b border-slate-200 pb-4">
                 <i class="fa-regular fa-clock text-2xl text-snu-navy"></i>
@@ -260,7 +259,6 @@
             </div>
 
             <div class="grid lg:grid-cols-3 gap-8">
-                <!-- Day 1: July 27 (Monday) -->
                 <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm">
                     <div class="border-b border-slate-100 pb-3 mb-4 flex justify-between items-center">
                         <h3 class="font-bold text-lg text-snu-navy">Day 1</h3>
@@ -293,7 +291,6 @@
                     </ul>
                 </div>
 
-                <!-- Day 2: July 28 (Tuesday) -->
                 <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm">
                     <div class="border-b border-slate-100 pb-3 mb-4 flex justify-between items-center">
                         <h3 class="font-bold text-lg text-snu-navy">Day 2</h3>
@@ -346,7 +343,6 @@
                     </ul>
                 </div>
 
-                <!-- Day 3: July 29 (Wednesday) -->
                 <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm flex flex-col justify-between">
                     <div>
                         <div class="border-b border-slate-100 pb-3 mb-4 flex justify-between items-center">
@@ -365,17 +361,13 @@
             </div>
         </div>
 
-
-        <!-- ================= PAGE: TITLES & ABSTRACTS ================= -->
         <div id="page-abstracts" class="tab-content hidden max-w-4xl mx-auto px-6 py-12">
             <div class="flex items-center gap-3 mb-8 border-b border-slate-200 pb-4">
                 <i class="fa-solid fa-book-open text-2xl text-snu-navy"></i>
                 <h2 class="text-2xl font-bold text-snu-navy">Titles & Abstracts</h2>
             </div>
 
-            <!-- List of 8 Speaker Card Blocks -->
             <div class="space-y-6">
-                <!-- 1 -->
                 <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-shadow">
                     <div class="flex justify-between items-start mb-2">
                         <h3 class="font-bold text-xl text-snu-navy">이승빈 <span class="text-sm text-slate-400 font-normal ml-2">| 서울대학교</span></h3>
@@ -386,7 +378,6 @@
                     </div>
                 </div>
 
-                <!-- 2 -->
                 <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-shadow">
                     <div class="flex justify-between items-start mb-2">
                         <h3 class="font-bold text-xl text-snu-navy">이재현 <span class="text-sm text-slate-400 font-normal ml-2">| 서울대학교</span></h3>
@@ -397,7 +388,6 @@
                     </div>
                 </div>
 
-                <!-- 3 -->
                 <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-shadow">
                     <div class="flex justify-between items-start mb-2">
                         <h3 class="font-bold text-xl text-snu-navy">오동건 <span class="text-sm text-slate-400 font-normal ml-2">| 서울대학교</span></h3>
@@ -408,7 +398,6 @@
                     </div>
                 </div>
 
-                <!-- 4 -->
                 <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-shadow">
                     <div class="flex justify-between items-start mb-2">
                         <h3 class="font-bold text-xl text-snu-navy">천지원 <span class="text-sm text-slate-400 font-normal ml-2">| 서울대학교</span></h3>
@@ -419,7 +408,6 @@
                     </div>
                 </div>
 
-                <!-- 5 -->
                 <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-shadow">
                     <div class="flex justify-between items-start mb-2">
                         <h3 class="font-bold text-xl text-snu-navy">최동준 <span class="text-sm text-slate-400 font-normal ml-2">| 서울대학교</span></h3>
@@ -430,7 +418,6 @@
                     </div>
                 </div>
 
-                <!-- 6 -->
                 <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-shadow">
                     <div class="flex justify-between items-start mb-2">
                         <h3 class="font-bold text-xl text-snu-navy">이소연 <span class="text-sm text-slate-400 font-normal ml-2">| 서울대학교</span></h3>
@@ -441,7 +428,6 @@
                     </div>
                 </div>
 
-                <!-- 7 -->
                 <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-shadow">
                     <div class="flex justify-between items-start mb-2">
                         <h3 class="font-bold text-xl text-snu-navy">Sylvain Carpentier <span class="text-sm text-slate-400 font-normal ml-2">| 서울대학교</span></h3>
@@ -452,7 +438,6 @@
                     </div>
                 </div>
 
-                <!-- 8 -->
                 <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-shadow">
                     <div class="flex justify-between items-start mb-2">
                         <h3 class="font-bold text-xl text-snu-navy">Akito Uruno <span class="text-sm text-slate-400 font-normal ml-2">| NCTS</span></h3>
@@ -467,7 +452,12 @@
 
     </main>
 
-    <!-- JavaScript for Dynamic Tab Switching (SPA Routing) -->
+    <footer class="bg-slate-900 text-slate-400 text-xs py-6 border-t border-slate-800 text-center">
+        <div class="max-w-6xl mx-auto px-6">
+            &copy; 2026 Department of Mathematical Sciences, Seoul National University. All rights reserved.
+        </div>
+    </footer>
+
     <script>
         function switchTab(tabId) {
             // Hide all tab contents
@@ -482,8 +472,8 @@
                 activePage.classList.remove('hidden');
             }
 
-            // Reset navigation colors
-            const navIds = ['main', 'timetable', 'abstracts'];
+            // Reset navigation colors (포스터 차원 배정 완료)
+            const navIds = ['main', 'poster', 'timetable', 'abstracts'];
             navIds.forEach(id => {
                 const navBtn = document.getElementById('nav-' + id);
                 if (navBtn) {
