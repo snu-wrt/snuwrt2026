@@ -57,10 +57,10 @@
             </a>
             
             <nav class="flex items-center gap-6 text-sm font-medium">
-                <button id="nav-main" onclick="switchTab('main')", class="text-snu-gold hover:text-white transition-colors cursor-pointer">Main</button>
-                <button id="nav-poster" onclick="switchTab('poster')", class="text-slate-300 hover:text-white transition-colors cursor-pointer">Poster</button>
-                <button id="nav-timetable" onclick="switchTab('timetable')", class="text-slate-300 hover:text-white transition-colors cursor-pointer">Timetable</button>
-                <button id="nav-abstracts" onclick="switchTab('abstracts')", class="text-slate-300 hover:text-white transition-colors cursor-pointer">Titles & Abstracts</button>
+                <button id="nav-main" onclick="switchTab('main')" class="text-snu-gold hover:text-white transition-colors cursor-pointer">Main</button>
+                <button id="nav-poster" onclick="switchTab('poster')" class="text-slate-300 hover:text-white transition-colors cursor-pointer">Poster</button>
+                <button id="nav-timetable" onclick="switchTab('timetable')" class="text-slate-300 hover:text-white transition-colors cursor-pointer">Timetable</button>
+                <button id="nav-abstracts" onclick="switchTab('abstracts')" class="text-slate-300 hover:text-white transition-colors cursor-pointer">Titles & Abstracts</button>
             </nav>
         </div>
     </header>
@@ -452,10 +452,7 @@
 
     </main>
 
-    <footer class="bg-slate-900 text-slate-400 text-xs py-6 border-t border-slate-800 text-center">
-        <div class="max-w-6xl mx-auto px-6">
-            &copy; 2026 Department of Mathematical Sciences, Seoul National University. All rights reserved.
-        </div>
+    <footer class="bg-slate-900 py-4 text-center">
     </footer>
 
     <script>
@@ -472,7 +469,7 @@
                 activePage.classList.remove('hidden');
             }
 
-            // Reset navigation colors (포스터 차원 배정 완료)
+            // Reset navigation colors
             const navIds = ['main', 'poster', 'timetable', 'abstracts'];
             navIds.forEach(id => {
                 const navBtn = document.getElementById('nav-' + id);
