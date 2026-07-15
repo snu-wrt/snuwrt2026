@@ -28,6 +28,20 @@
         }
     </script>
     
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:ital,wght=0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -210,39 +224,39 @@
             </section>
 
             <section class="bg-slate-950 text-white py-16">
-    <div class="max-w-6xl mx-auto px-6 text-center space-y-8">
-        <h2 class="text-xs font-bold tracking-widest text-snu-gold uppercase">Supported By</h2>
-        
-        <div class="flex flex-wrap justify-center items-center gap-6 max-w-6xl mx-auto">
-            <div class="bg-white px-4 py-5 rounded-xl flex flex-col items-center justify-between w-80 h-32 shadow-md transition-transform hover:scale-[1.02]">
-                <div class="w-full h-14 flex items-center justify-center">
-                    <img src="images/logo-qsms.png" alt="QSMS Logo" class="max-h-[2.9rem] max-w-full object-contain">
-                </div>
-                <div class="w-full h-6 flex items-end justify-center text-center overflow-hidden">
-                    <span class="text-[9.5px] text-slate-400 block leading-tight whitespace-nowrap tracking-tight">Center for Quantum Structures in Modules and Spaces</span>
-                </div>
-            </div>
+                <div class="max-w-6xl mx-auto px-6 text-center space-y-8">
+                    <h2 class="text-xs font-bold tracking-widest text-snu-gold uppercase">Supported By</h2>
+                    
+                    <div class="flex flex-wrap justify-center items-center gap-6 max-w-6xl mx-auto">
+                        <div class="bg-white px-4 py-5 rounded-xl flex flex-col items-center justify-between w-80 h-32 shadow-md transition-transform hover:scale-[1.02]">
+                            <div class="w-full h-14 flex items-center justify-center">
+                                <img src="images/logo-qsms.png" alt="QSMS Logo" class="max-h-[2.9rem] max-w-full object-contain">
+                            </div>
+                            <div class="w-full h-6 flex items-end justify-center text-center overflow-hidden">
+                                <span class="text-[9.5px] text-slate-400 block leading-tight whitespace-nowrap tracking-tight">Center for Quantum Structures in Modules and Spaces</span>
+                            </div>
+                        </div>
 
-            <div class="bg-white px-4 py-5 rounded-xl flex flex-col items-center justify-between w-80 h-32 shadow-md transition-transform hover:scale-[1.02]">
-                <div class="w-full h-14 flex items-center justify-center">
-                    <img src="images/logo-inu.png" alt="Incheon National University Logo" class="max-h-[2.75rem] max-w-full object-contain">
-                </div>
-                <div class="w-full h-6 flex items-end justify-center text-center overflow-hidden">
-                    <span class="text-[9.5px] text-slate-400 block leading-tight whitespace-nowrap tracking-tight">Incheon National University</span>
-                </div>
-            </div>
+                        <div class="bg-white px-4 py-5 rounded-xl flex flex-col items-center justify-between w-80 h-32 shadow-md transition-transform hover:scale-[1.02]">
+                            <div class="w-full h-14 flex items-center justify-center">
+                                <img src="images/logo-inu.png" alt="Incheon National University Logo" class="max-h-[2.75rem] max-w-full object-contain">
+                            </div>
+                            <div class="w-full h-6 flex items-end justify-center text-center overflow-hidden">
+                                <span class="text-[9.5px] text-slate-400 block leading-tight whitespace-nowrap tracking-tight">Incheon National University</span>
+                            </div>
+                        </div>
 
-            <div class="bg-white px-4 py-5 rounded-xl flex flex-col items-center justify-between w-80 h-32 shadow-md transition-transform hover:scale-[1.02]">
-                <div class="w-full h-14 flex items-center justify-center">
-                    <img src="images/logo-NRF.png" alt="National Research Foundation of Korea Logo" class="max-h-[3.65rem] max-w-full object-contain">
+                        <div class="bg-white px-4 py-5 rounded-xl flex flex-col items-center justify-between w-80 h-32 shadow-md transition-transform hover:scale-[1.02]">
+                            <div class="w-full h-14 flex items-center justify-center">
+                                <img src="images/logo-NRF.png" alt="National Research Foundation of Korea Logo" class="max-h-[3.65rem] max-w-full object-contain">
+                            </div>
+                            <div class="w-full h-6 flex items-end justify-center text-center overflow-hidden">
+                                <span class="text-[9.5px] text-slate-400 block leading-tight whitespace-nowrap tracking-tight">National Research Foundation of Korea</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="w-full h-6 flex items-end justify-center text-center overflow-hidden">
-                    <span class="text-[9.5px] text-slate-400 block leading-tight whitespace-nowrap tracking-tight">National Research Foundation of Korea</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+            </section>
         </div>
 
         <div id="page-poster" class="tab-content hidden max-w-4xl mx-auto px-6 py-12">
@@ -460,8 +474,8 @@
                         <h3 class="font-bold text-xl text-snu-navy">Akito Uruno <span class="text-sm text-slate-400 font-normal ml-2">| NCTS</span></h3>
                     </div>
                     <div class="space-y-2">
-                        <h4 class="font-semibold text-slate-800">Title: TBA</h4>
-                        <p class="text-sm text-slate-500 leading-relaxed font-light">Abstract: TBA</p>
+                        <h4 class="font-semibold text-slate-800">Title: On the Mullineux Conjugation</h4>
+                        <p class="text-sm text-slate-500 leading-relaxed font-light">Abstract: Let $S_d$ be the symmetric group on $n$ letters, and let $D^\lambda$ denote the irreducible $kS_d$-module corresponding to a $p$-restricted partition $\lambda$ of $d$ over a field $k$ of characteristic $p$. In the representation theory of symmetric groups, describing the combinatorial label of the irreducible module obtained by tensoring $D^\lambda$ with the one-dimensional sign representation—denoted as $D^\lambda \otimes \text{sgn}$—has long been a fundamental problem. In 1979, Mullineux introduced an algorithmic bijection on $p$-restricted partitions and conjectured that $D^\lambda \otimes \text{sgn} \cong D^{M(\lambda)}$. In this talk, we review the proof of the Mullineux conjecture following the framework established by Brundan and Kujawa (2003). The core of this approach lies in a superalgebra analogue of Schur-Weyl duality, which connects the representations of $S_d$ to those of the supergroup $GL(n | n)$.</p>
                     </div>
                 </div>
             </div>
