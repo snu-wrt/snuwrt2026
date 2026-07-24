@@ -1,556 +1,551 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SNU Workshop for Representation Theory 2026</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        snu: {
-                            navy: '#0f1e36',
-                            gold: '#f3ad1b',
-                            blue: '#1e3a8a',
-                            light: '#f8fafc',
-                            gray: '#64748b'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Noto Sans KR', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif']
+<html lang="ko"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>SNU Workshop for Representation Theory 2026</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    snu: {
+                        navy: '#0f1e36',
+                        gold: '#f3ad1b',
+                        blue: '#1e3a8a',
+                        light: '#f8fafc',
+                        gray: '#64748b'
                     }
+                },
+                fontFamily: {
+                    sans: ['Noto Sans KR', 'sans-serif'],
+                    serif: ['Playfair Display', 'serif']
                 }
             }
         }
-    </script>
-    
-    <script>
-        window.MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-                displayMath: [['$$', '$$'], ['\\[', '\\]']],
-                processEscapes: true
-            },
-            options: {
-                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-            }
-        };
-    </script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    }
+</script>
 
-    <style>
-        body {
-            font-family: 'Noto Sans KR', sans-serif;
-            scroll-behavior: smooth;
+<script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']],
+            processEscapes: true
+        },
+        options: {
+            skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
         }
-        .academic-serif {
-            font-family: 'Playfair Display', serif;
-        }
-    </style>
-</head>
-<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col justify-between">
+    };
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-    <header class="bg-snu-navy text-white sticky top-0 z-50 shadow-md">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center gap-2">
-            <a href="#" onclick="switchTab('main')" class="flex items-center gap-2 shrink-0">
-                <div class="text-snu-gold text-xl md:text-2xl">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                </div>
-                <div>
-                    <span class="font-bold text-base md:text-lg tracking-tight block whitespace-nowrap">SNU WRT 2026</span>
-                </div>
-            </a>
-            
-            <nav class="flex items-center gap-3 md:gap-6 text-xs md:text-sm font-medium shrink-0">
-                <button id="nav-main" onclick="switchTab('main')" class="text-snu-gold hover:text-white transition-colors cursor-pointer">Main</button>
-                <button id="nav-poster" onclick="switchTab('poster')" class="text-slate-300 hover:text-white transition-colors cursor-pointer">Poster</button>
-                <button id="nav-timetable" onclick="switchTab('timetable')" class="text-slate-300 hover:text-white transition-colors cursor-pointer">Timetable</button>
-                <button id="nav-abstracts" onclick="switchTab('abstracts')" class="text-slate-300 hover:text-white transition-colors cursor-pointer whitespace-nowrap">Titles & Abstracts</button>
-            </nav>
-        </div>
-    </header>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <main class="flex-grow">
+<style>
+    body {
+        font-family: 'Noto Sans KR', sans-serif;
+        scroll-behavior: smooth;
+    }
+    .academic-serif {
+        font-family: 'Playfair Display', serif;
+    }
+</style>
+</head> <body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col justify-between">
+
+<header class="bg-snu-navy text-white sticky top-0 z-50 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center gap-2">
+        <a href="#" onclick="switchTab('main')" class="flex items-center gap-2 shrink-0">
+            <div class="text-snu-gold text-xl md:text-2xl">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div>
+                <span class="font-bold text-base md:text-lg tracking-tight block whitespace-nowrap">SNU WRT 2026</span>
+            </div>
+        </a>
         
-        <div id="page-main" class="tab-content">
-            <section class="bg-gradient-to-br from-snu-navy via-[#112444] to-[#1e345c] text-white py-20 px-6 relative overflow-hidden">
-                <div class="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
-                <div class="max-w-4xl mx-auto text-center relative z-10">
-                    <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight mb-6">
-                        SNU Workshop for <br>
-                        <span class="academic-serif text-snu-gold italic">Representation Theory</span> and Related Topics
-                    </h1>
+        <nav class="flex items-center gap-3 md:gap-6 text-xs md:text-sm font-medium shrink-0">
+            <button id="nav-main" onclick="switchTab('main')" class="text-snu-gold hover:text-white transition-colors cursor-pointer">Main</button>
+            <button id="nav-poster" onclick="switchTab('poster')" class="text-slate-300 hover:text-white transition-colors cursor-pointer">Poster</button>
+            <button id="nav-timetable" onclick="switchTab('timetable')" class="text-slate-300 hover:text-white transition-colors cursor-pointer">Timetable</button>
+            <button id="nav-abstracts" onclick="switchTab('abstracts')" class="text-slate-300 hover:text-white transition-colors cursor-pointer whitespace-nowrap">Titles & Abstracts</button>
+        </nav>
+    </div>
+</header>
 
-                    <div class="flex flex-wrap justify-center gap-4 max-w-xl mx-auto mt-8 text-sm">
-                        <div class="bg-white/10 backdrop-blur-md px-5 py-3 rounded-xl border border-white/10 flex items-center gap-3">
-                            <i class="fa-regular fa-calendar text-snu-gold"></i>
-                            <span class="font-medium text-white">July 27 – 29, 2026</span>
-                        </div>
-                        <div class="bg-white/10 backdrop-blur-md px-5 py-3 rounded-xl border border-white/10 flex items-center gap-3">
-                            <i class="fa-solid fa-hotel text-snu-gold"></i>
-                            <span class="font-medium text-white">Incheon National University</span>
-                        </div>
+<main class="flex-grow">
+    
+    <div id="page-main" class="tab-content">
+        <section class="bg-gradient-to-br from-snu-navy via-[#112444] to-[#1e345c] text-white py-20 px-6 relative overflow-hidden">
+            <div class="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
+            <div class="max-w-4xl mx-auto text-center relative z-10">
+                <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight mb-6">
+                    SNU Workshop for <br>
+                    <span class="academic-serif text-snu-gold italic">Representation Theory</span> and Related Topics
+                </h1>
+
+                <div class="flex flex-wrap justify-center gap-4 max-w-xl mx-auto mt-8 text-sm">
+                    <div class="bg-white/10 backdrop-blur-md px-5 py-3 rounded-xl border border-white/10 flex items-center gap-3">
+                        <i class="fa-regular fa-calendar text-snu-gold"></i>
+                        <span class="font-medium text-white">July 27 – 29, 2026</span>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md px-5 py-3 rounded-xl border border-white/10 flex items-center gap-3">
+                        <i class="fa-solid fa-hotel text-snu-gold"></i>
+                        <span class="font-medium text-white">Incheon National University</span>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section class="max-w-6xl mx-auto px-6 py-16">
+        <section class="max-w-6xl mx-auto px-6 py-16">
+            <div class="flex items-center gap-3 mb-8 border-b border-slate-200 pb-4">
+                <i class="fa-solid fa-users text-2xl text-snu-navy"></i>
+                <h2 class="text-2xl font-bold text-snu-navy">Speakers</h2>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-lg text-slate-800">이승빈</h3>
+                    <p class="text-sm text-slate-500 mt-1">서울대학교</p>
+                </div>
+                <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-lg text-slate-800">이재현</h3>
+                    <p class="text-sm text-slate-500 mt-1">서울대학교</p>
+                </div>
+                <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-lg text-slate-800">오동건</h3>
+                    <p class="text-sm text-slate-500 mt-1">서울대학교</p>
+                </div>
+                <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-lg text-slate-800">천지원</h3>
+                    <p class="text-sm text-slate-500 mt-1">서울대학교</p>
+                </div>
+                <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-lg text-slate-800">최동준</h3>
+                    <p class="text-sm text-slate-500 mt-1">서울대학교</p>
+                </div>
+                <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-lg text-slate-800">이소연</h3>
+                    <p class="text-sm text-slate-500 mt-1">서울대학교</p>
+                </div>
+                <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-lg text-slate-800">Sylvain Carpentier</h3>
+                    <p class="text-sm text-slate-500 mt-1">서울대학교</p>
+                </div>
+                <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-lg text-slate-800">Akito Uruno</h3>
+                    <p class="text-sm text-slate-500 mt-1">NCTS</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-slate-100/50 border-t border-b border-slate-200 py-16">
+            <div class="max-w-6xl mx-auto px-6">
                 <div class="flex items-center gap-3 mb-8 border-b border-slate-200 pb-4">
-                    <i class="fa-solid fa-users text-2xl text-snu-navy"></i>
-                    <h2 class="text-2xl font-bold text-snu-navy">Speakers</h2>
+                    <i class="fa-solid fa-user-gear text-2xl text-snu-navy"></i>
+                    <h2 class="text-2xl font-bold text-snu-navy">Organizers</h2>
                 </div>
                 
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                    <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
-                        <h3 class="font-bold text-lg text-slate-800">이승빈</h3>
-                        <p class="text-sm text-slate-500 mt-1">서울대학교</p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl">
+                    <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm">
+                        <h3 class="font-bold text-lg text-slate-800">권재훈</h3>
+                        <p class="text-xs text-slate-500 mt-1">서울대학교</p>
                     </div>
-                    <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
-                        <h3 class="font-bold text-lg text-slate-800">이재현</h3>
-                        <p class="text-sm text-slate-500 mt-1">서울대학교</p>
+                    <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm">
+                        <h3 class="font-bold text-lg text-slate-800">서의린</h3>
+                        <p class="text-xs text-slate-500 mt-1">서울대학교</p>
                     </div>
-                    <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
-                        <h3 class="font-bold text-lg text-slate-800">오동건</h3>
-                        <p class="text-sm text-slate-500 mt-1">서울대학교</p>
-                    </div>
-                    <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
-                        <h3 class="font-bold text-lg text-slate-800">천지원</h3>
-                        <p class="text-sm text-slate-500 mt-1">서울대학교</p>
-                    </div>
-                    <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
-                        <h3 class="font-bold text-lg text-slate-800">최동준</h3>
-                        <p class="text-sm text-slate-500 mt-1">서울대학교</p>
-                    </div>
-                    <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
-                        <h3 class="font-bold text-lg text-slate-800">이소연</h3>
-                        <p class="text-sm text-slate-500 mt-1">서울대학교</p>
-                    </div>
-                    <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
-                        <h3 class="font-bold text-lg text-slate-800">Sylvain Carpentier</h3>
-                        <p class="text-sm text-slate-500 mt-1">서울대학교</p>
-                    </div>
-                    <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
-                        <h3 class="font-bold text-lg text-slate-800">Akito Uruno</h3>
-                        <p class="text-sm text-slate-500 mt-1">NCTS</p>
+                    <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm">
+                        <h3 class="font-bold text-lg text-slate-800">장일승</h3>
+                        <p class="text-xs text-slate-500 mt-1">인천대학교</p>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section class="bg-slate-100/50 border-t border-b border-slate-200 py-16">
-                <div class="max-w-6xl mx-auto px-6">
-                    <div class="flex items-center gap-3 mb-8 border-b border-slate-200 pb-4">
-                        <i class="fa-solid fa-user-gear text-2xl text-snu-navy"></i>
-                        <h2 class="text-2xl font-bold text-snu-navy">Organizers</h2>
-                    </div>
-                    
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl">
-                        <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm">
-                            <h3 class="font-bold text-lg text-slate-800">권재훈</h3>
-                            <p class="text-xs text-slate-500 mt-1">서울대학교</p>
-                        </div>
-                        <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm">
-                            <h3 class="font-bold text-lg text-slate-800">서의린</h3>
-                            <p class="text-xs text-slate-500 mt-1">서울대학교</p>
-                        </div>
-                        <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm">
-                            <h3 class="font-bold text-lg text-slate-800">장일승</h3>
-                            <p class="text-xs text-slate-500 mt-1">인천대학교</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="max-w-6xl mx-auto px-6 py-16">
-                <div class="flex items-center gap-3 mb-10 border-b border-slate-200 pb-4">
-                    <i class="fa-solid fa-map-location-dot text-2xl text-snu-navy"></i>
-                    <h2 class="text-2xl font-bold text-snu-navy">Venue</h2>
-                </div>
-
-                <div class="grid lg:grid-cols-12 gap-8 items-stretch">
-                    <div class="lg:col-span-5 space-y-6 flex flex-col justify-between">
-                        <div class="space-y-6">
-                            <div class="border-l-4 border-snu-gold pl-4 space-y-3">
-                                <h3 class="text-lg font-bold text-snu-navy uppercase tracking-wider">Lecture room</h3>
-                                <div class="space-y-1">
-                                    <h4 class="font-bold text-slate-800 text-lg">Incheon National University</h4>
-                                    <p class="text-sm text-slate-600">College of Natural Sciences, room 335 (자연과학대학 5호관 335호)</p>
-                                    <p class="text-xs text-slate-400">Address: 인천광역시 연수구 아카데미로 119</p>
-                                </div>
-                                <a href="https://maps.google.com/?q=인천대학교+송도캠퍼스+자연과학대학" target="_blank" class="inline-flex items-center gap-2 bg-snu-navy hover:bg-snu-blue text-white text-xs font-medium px-4 py-2 rounded-lg transition-colors shadow-sm">
-                                    <i class="fa-solid fa-location-crosshairs text-snu-gold"></i>
-                                    인천대학교 지도에서 바로찾기
-                                </a>
-                            </div>
-
-                            <div class="border-l-4 border-slate-400 pl-4 space-y-3">
-                                <h3 class="text-lg font-bold text-slate-500 uppercase tracking-wider">Accommodation</h3>
-                                <div class="space-y-1">
-                                    <h4 class="font-bold text-slate-800 text-lg">Bridge Hotel Incheon Songdo</h4>
-                                    <p class="text-sm">
-                                        Website: <a href="http://bridgehotelincheonsongdo.com" target="_blank" class="text-blue-600 hover:underline inline-flex items-center">http://bridgehotelincheonsongdo.com</a>
-                                    </p>
-                                    <p class="text-xs text-slate-400">Address: 인천광역시 연수구 컨벤시아대로 233</p>
-                                </div>
-                                <a href="https://maps.google.com/?q=브릿지호텔+인천+송도" target="_blank" class="inline-flex items-center gap-2 bg-slate-700 hover:bg-slate-800 text-white text-xs font-medium px-4 py-2 rounded-lg transition-colors shadow-sm">
-                                    <i class="fa-solid fa-bed text-snu-gold"></i>
-                                    브릿지 호텔 지도에서 바로찾기
-                                </a>
-                            </div>
-
-                            <div class="border-l-4 border-amber-500 pl-4 space-y-3">
-                                <h3 class="text-lg font-bold text-snu-navy uppercase tracking-wider">Banquet</h3>
-                                <div class="space-y-1">
-                                    <h4 class="font-bold text-slate-800 text-lg">한마음정육식당 송도타임스페이스점</h4>
-                                    <p class="text-xs text-slate-400">Address: 인천 연수구 하모니로 158 송도타임스페이스 B동 지하1층</p>
-                                </div>
-                                <a href="https://www.google.com/maps/search/?api=1&query=한마음정육식당+송도타임스페이스점&query_place_id=ChIJCx9dwMvjZTUREFNTMmMWR80" target="_blank" class="inline-flex items-center gap-2 bg-snu-navy hover:bg-snu-blue text-white text-xs font-medium px-4 py-2 rounded-lg transition-colors shadow-sm">
-                                    <i class="fa-solid fa-utensils text-snu-gold"></i>
-                                    한마음정육식당 지도에서 바로찾기
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="lg:col-span-7 min-h-[400px] h-full rounded-2xl overflow-hidden shadow-sm border border-slate-200">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.3082643594834!2d126.62649987637848!3d37.382585234237785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b901f40d12c8b%3A0xe7f920f26941a8de!2z7J247L someIOuMgO2Zmeq1kCDsh6PhgYTrgqTrmZTrjIA!5e0!3m2!1sko!2skr!4v1700000000000" 
-                            class="w-full h-full min-h-[400px] border-0"
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
-                </div>
-            </section>
-
-            <section class="bg-slate-950 text-white py-16">
-                <div class="max-w-6xl mx-auto px-6 text-center space-y-8">
-                    <h2 class="text-xs font-bold tracking-widest text-snu-gold uppercase">Supported By</h2>
-                    
-                    <div class="flex flex-wrap justify-center items-center gap-6 max-w-6xl mx-auto">
-                        <div class="bg-white px-4 py-5 rounded-xl flex flex-col items-center justify-between w-80 h-32 shadow-md transition-transform hover:scale-[1.02]">
-                            <div class="w-full h-14 flex items-center justify-center">
-                                <img src="images/logo-qsms.png" alt="QSMS Logo" class="max-h-[2.9rem] max-w-full object-contain">
-                            </div>
-                            <div class="w-full h-6 flex items-end justify-center text-center overflow-hidden">
-                                <span class="text-[9.5px] text-slate-400 block leading-tight whitespace-nowrap tracking-tight">Center for Quantum Structures in Modules and Spaces</span>
-                            </div>
-                        </div>
-
-                        <div class="bg-white px-4 py-5 rounded-xl flex flex-col items-center justify-between w-80 h-32 shadow-md transition-transform hover:scale-[1.02]">
-                            <div class="w-full h-14 flex items-center justify-center">
-                                <img src="images/logo-inu.png" alt="Incheon National University Logo" class="max-h-[2.75rem] max-w-full object-contain">
-                            </div>
-                            <div class="w-full h-6 flex items-end justify-center text-center overflow-hidden">
-                                <span class="text-[9.5px] text-slate-400 block leading-tight whitespace-nowrap tracking-tight">Incheon National University</span>
-                            </div>
-                        </div>
-
-                        <div class="bg-white px-4 py-5 rounded-xl flex flex-col items-center justify-between w-80 h-32 shadow-md transition-transform hover:scale-[1.02]">
-                            <div class="w-full h-14 flex items-center justify-center">
-                                <img src="images/logo-NRF.png" alt="National Research Foundation of Korea Logo" class="max-h-[3.65rem] max-w-full object-contain">
-                            </div>
-                            <div class="w-full h-6 flex items-end justify-center text-center overflow-hidden">
-                                <span class="text-[9.5px] text-slate-400 block leading-tight whitespace-nowrap tracking-tight">National Research Foundation of Korea</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <div id="page-poster" class="tab-content hidden max-w-4xl mx-auto px-6 py-12">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 border-b border-slate-200 pb-4">
-                <div class="flex items-center gap-3">
-                    <i class="fa-solid fa-file-image text-2xl text-snu-navy"></i>
-                    <h2 class="text-2xl font-bold text-snu-navy">Workshop Poster</h2>
-                </div>
-                <a href="Poster.pdf" target="_blank" class="inline-flex items-center justify-center gap-2 bg-snu-navy hover:bg-snu-blue text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition-all shadow-sm hover:shadow">
-                    <i class="fa-solid fa-file-arrow-down text-snu-gold"></i>
-                    Download Original PDF
-                </a>
+        <section class="max-w-6xl mx-auto px-6 py-16">
+            <div class="flex items-center gap-3 mb-10 border-b border-slate-200 pb-4">
+                <i class="fa-solid fa-map-location-dot text-2xl text-snu-navy"></i>
+                <h2 class="text-2xl font-bold text-snu-navy">Venue</h2>
             </div>
 
-            <div class="bg-white rounded-3xl p-6 shadow-md border border-slate-200 text-center max-w-2xl mx-auto">
-                <div class="relative group overflow-hidden rounded-2xl border border-slate-100 bg-slate-50">
-                    <img src="images/poster-1.png" alt="SNU Workshop for Representation Theory 2026 Poster" class="w-full h-auto object-contain transition-transform duration-300 group-hover:scale-[1.005]">
-                    <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <a href="Poster.pdf" target="_blank" class="bg-white text-snu-navy font-bold px-6 py-3 rounded-xl shadow-lg flex items-center gap-2 text-sm hover:bg-slate-50 transition-colors">
-                            <i class="fa-solid fa-magnifying-glass-plus"></i> Open Full Vector PDF
-                        </a>
+            <div class="grid lg:grid-cols-12 gap-8 items-stretch">
+                <div class="lg:col-span-5 space-y-6 flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <div class="border-l-4 border-snu-gold pl-4 space-y-3">
+                            <h3 class="text-lg font-bold text-snu-navy uppercase tracking-wider">Lecture room</h3>
+                            <div class="space-y-1">
+                                <h4 class="font-bold text-slate-800 text-lg">Incheon National University</h4>
+                                <p class="text-sm text-slate-600">College of Natural Sciences, room 335 (자연과학대학 5호관 335호)</p>
+                                <p class="text-xs text-slate-400">Address: 인천광역시 연수구 아카데미로 119</p>
+                            </div>
+                            <a href="https://maps.google.com/?q=인천대학교+송도캠퍼스+자연과학대학" target="_blank" class="inline-flex items-center gap-2 bg-snu-navy hover:bg-snu-blue text-white text-xs font-medium px-4 py-2 rounded-lg transition-colors shadow-sm">
+                                <i class="fa-solid fa-location-crosshairs text-snu-gold"></i>
+                                인천대학교 지도에서 바로찾기
+                            </a>
+                        </div>
+
+                        <div class="border-l-4 border-slate-400 pl-4 space-y-3">
+                            <h3 class="text-lg font-bold text-slate-500 uppercase tracking-wider">Accommodation</h3>
+                            <div class="space-y-1">
+                                <h4 class="font-bold text-slate-800 text-lg">Bridge Hotel Incheon Songdo</h4>
+                                <p class="text-sm">
+                                    Website: <a href="http://bridgehotelincheonsongdo.com" target="_blank" class="text-blue-600 hover:underline inline-flex items-center">http://bridgehotelincheonsongdo.com</a>
+                                </p>
+                                <p class="text-xs text-slate-400">Address: 인천광역시 연수구 컨벤시아대로 233</p>
+                            </div>
+                            <a href="https://maps.google.com/?q=브릿지호텔+인천+송도" target="_blank" class="inline-flex items-center gap-2 bg-slate-700 hover:bg-slate-800 text-white text-xs font-medium px-4 py-2 rounded-lg transition-colors shadow-sm">
+                                <i class="fa-solid fa-bed text-snu-gold"></i>
+                                브릿지 호텔 지도에서 바로찾기
+                            </a>
+                        </div>
+
+                        <div class="border-l-4 border-amber-500 pl-4 space-y-3">
+                            <h3 class="text-lg font-bold text-snu-navy uppercase tracking-wider">Banquet</h3>
+                            <div class="space-y-1">
+                                <h4 class="font-bold text-slate-800 text-lg">한마음정육식당 송도타임스페이스점</h4>
+                                <p class="text-xs text-slate-400">Address: 인천 연수구 하모니로 158 송도타임스페이스 B동 지하1층</p>
+                            </div>
+                            <a href="https://maps.google.com/?q=한마음정육식당+송도타임스페이스점" target="_blank" class="inline-flex items-center gap-2 bg-snu-navy hover:bg-snu-blue text-white text-xs font-medium px-4 py-2 rounded-lg transition-colors shadow-sm">
+                                <i class="fa-solid fa-utensils text-snu-gold"></i>
+                                한마음정육식당 지도에서 바로찾기
+                            </a>
+                        </div>
                     </div>
+                </div>
+
+                <div class="lg:col-span-7 min-h-[400px] h-full rounded-2xl overflow-hidden shadow-sm border border-slate-200">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.3082643594834!2d126.62649987637848!3d37.382585234237785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b901f40d12c8b%3A0xe7f920f26941a8de!2z7J247L someIOuMgO2Zmeq1kCDsh6PhgYTrgqTrmZTrjIA!5e0!3m2!1sko!2skr!4v1700000000000" 
+                        class="w-full h-full min-h-[400px] border-0"
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-slate-950 text-white py-16">
+            <div class="max-w-6xl mx-auto px-6 text-center space-y-8">
+                <h2 class="text-xs font-bold tracking-widest text-snu-gold uppercase">Supported By</h2>
+                
+                <div class="flex flex-wrap justify-center items-center gap-6 max-w-6xl mx-auto">
+                    <div class="bg-white px-4 py-5 rounded-xl flex flex-col items-center justify-between w-80 h-32 shadow-md transition-transform hover:scale-[1.02]">
+                        <div class="w-full h-14 flex items-center justify-center">
+                            <img src="images/logo-qsms.png" alt="QSMS Logo" class="max-h-[2.9rem] max-w-full object-contain">
+                        </div>
+                        <div class="w-full h-6 flex items-end justify-center text-center overflow-hidden">
+                            <span class="text-[9.5px] text-slate-400 block leading-tight whitespace-nowrap tracking-tight">Center for Quantum Structures in Modules and Spaces</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white px-4 py-5 rounded-xl flex flex-col items-center justify-between w-80 h-32 shadow-md transition-transform hover:scale-[1.02]">
+                        <div class="w-full h-14 flex items-center justify-center">
+                            <img src="images/logo-inu.png" alt="Incheon National University Logo" class="max-h-[2.75rem] max-w-full object-contain">
+                        </div>
+                        <div class="w-full h-6 flex items-end justify-center text-center overflow-hidden">
+                            <span class="text-[9.5px] text-slate-400 block leading-tight whitespace-nowrap tracking-tight">Incheon National University</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white px-4 py-5 rounded-xl flex flex-col items-center justify-between w-80 h-32 shadow-md transition-transform hover:scale-[1.02]">
+                        <div class="w-full h-14 flex items-center justify-center">
+                            <img src="images/logo-NRF.png" alt="National Research Foundation of Korea Logo" class="max-h-[3.65rem] max-w-full object-contain">
+                        </div>
+                        <div class="w-full h-6 flex items-end justify-center text-center overflow-hidden">
+                            <span class="text-[9.5px] text-slate-400 block leading-tight whitespace-nowrap tracking-tight">National Research Foundation of Korea</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="page-poster" class="tab-content hidden max-w-4xl mx-auto px-6 py-12">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 border-b border-slate-200 pb-4">
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-file-image text-2xl text-snu-navy"></i>
+                <h2 class="text-2xl font-bold text-snu-navy">Workshop Poster</h2>
+            </div>
+            <a href="Poster.pdf" target="_blank" class="inline-flex items-center justify-center gap-2 bg-snu-navy hover:bg-snu-blue text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition-all shadow-sm hover:shadow">
+                <i class="fa-solid fa-file-arrow-down text-snu-gold"></i>
+                Download Original PDF
+            </a>
+        </div>
+
+        <div class="bg-white rounded-3xl p-6 shadow-md border border-slate-200 text-center max-w-2xl mx-auto">
+            <div class="relative group overflow-hidden rounded-2xl border border-slate-100 bg-slate-50">
+                <img src="images/poster-1.png" alt="SNU Workshop for Representation Theory 2026 Poster" class="w-full h-auto object-contain transition-transform duration-300 group-hover:scale-[1.005]">
+                <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <a href="Poster.pdf" target="_blank" class="bg-white text-snu-navy font-bold px-6 py-3 rounded-xl shadow-lg flex items-center gap-2 text-sm hover:bg-slate-50 transition-colors">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i> Open Full Vector PDF
+                    </a>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div id="page-timetable" class="tab-content hidden max-w-6xl mx-auto px-6 py-12">
-            <div class="flex items-center gap-3 mb-8 border-b border-slate-200 pb-4">
-                <i class="fa-regular fa-clock text-2xl text-snu-navy"></i>
-                <h2 class="text-2xl font-bold text-snu-navy">Workshop Timetable</h2>
+    <div id="page-timetable" class="tab-content hidden max-w-6xl mx-auto px-6 py-12">
+        <div class="flex items-center gap-3 mb-8 border-b border-slate-200 pb-4">
+            <i class="fa-regular fa-clock text-2xl text-snu-navy"></i>
+            <h2 class="text-2xl font-bold text-snu-navy">Workshop Timetable</h2>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm">
+                <div class="border-b border-slate-100 pb-3 mb-4 flex justify-between items-center">
+                    <h3 class="font-bold text-lg text-snu-navy">Day 1</h3>
+                    <span class="text-xs font-semibold px-2.5 py-1 bg-snu-navy/10 text-snu-navy rounded-full">July 27 (Mon)</span>
+                </div>
+                <ul class="space-y-4">
+                    <li class="border-l-2 border-snu-gold pl-3">
+                        <span class="text-xs text-slate-400 font-medium">14:00 - 14:50</span>
+                        <h4 class="font-bold text-slate-800 text-sm">Session 1</h4>
+                        <p class="text-xs text-slate-500 mt-0.5">이승빈 (서울대학교)</p>
+                    </li>
+                    <li class="bg-slate-50 rounded-lg p-2.5 flex items-center justify-between text-xs text-slate-500 border border-slate-100">
+                        <span class="font-semibold text-slate-600"><i class="fa-solid fa-mug-hot mr-1.5 text-amber-500"></i>Coffee Break</span>
+                        <span>14:50 - 15:10</span>
+                    </li>
+                    <li class="border-l-2 border-snu-gold pl-3">
+                        <span class="text-xs text-slate-400 font-medium">15:10 - 16:00</span>
+                        <h4 class="font-bold text-slate-800 text-sm">Session 2</h4>
+                        <p class="text-xs text-slate-500 mt-0.5">이재현 (서울대학교)</p>
+                    </li>
+                    <li class="bg-slate-50 rounded-lg p-2.5 flex items-center justify-between text-xs text-slate-500 border border-slate-100">
+                        <span class="font-semibold text-slate-600"><i class="fa-solid fa-mug-hot mr-1.5 text-amber-500"></i>Coffee Break</span>
+                        <span>16:00 - 16:20</span>
+                    </li>
+                    <li class="border-l-2 border-snu-gold pl-3">
+                        <span class="text-xs text-slate-400 font-medium">16:20 - 17:10</span>
+                        <h4 class="font-bold text-slate-800 text-sm">Session 3</h4>
+                        <p class="text-xs text-slate-500 mt-0.5">오동건 (서울대학교)</p>
+                    </li>
+                </ul>
             </div>
 
-            <div class="grid lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm">
+            <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm">
+                <div class="border-b border-slate-100 pb-3 mb-4 flex justify-between items-center">
+                    <h3 class="font-bold text-lg text-snu-navy">Day 2</h3>
+                    <span class="text-xs font-semibold px-2.5 py-1 bg-snu-gold/20 text-snu-gold rounded-full">July 28 (Tue)</span>
+                </div>
+                <ul class="space-y-4">
+                    <li class="border-l-2 border-slate-400 pl-3">
+                        <span class="text-xs text-slate-400 font-medium">10:00 - 10:50</span>
+                        <h4 class="font-bold text-slate-800 text-sm">Session 4</h4>
+                        <p class="text-xs text-slate-500 mt-0.5">천지원 (서울대학교)</p>
+                    </li>
+                    <li class="bg-slate-50 rounded-lg p-2.5 flex items-center justify-between text-xs text-slate-500 border border-slate-100">
+                        <span class="font-semibold text-slate-600"><i class="fa-solid fa-mug-hot mr-1.5 text-amber-500"></i>Coffee Break</span>
+                        <span>10:50 - 11:10</span>
+                    </li>
+                    <li class="border-l-2 border-slate-400 pl-3">
+                        <span class="text-xs text-slate-400 font-medium">11:10 - 12:00</span>
+                        <h4 class="font-bold text-slate-800 text-sm">Session 5</h4>
+                        <p class="text-xs text-slate-500 mt-0.5">최동준 (서울대학교)</p>
+                    </li>
+                    <li class="bg-blue-50/50 rounded-xl p-3 flex flex-col items-center justify-center text-xs text-slate-500 border border-blue-100/60 my-2">
+                        <span class="font-bold text-blue-900 inline-flex items-center gap-1.5 mb-0.5">
+                            <i class="fa-solid fa-bowl-food text-blue-600"></i> Lunch Break
+                        </span>
+                        <span class="text-[10px] text-slate-400">12:00 - 14:00 (2 Hours)</span>
+                    </li>
+                    <li class="border-l-2 border-slate-400 pl-3">
+                        <span class="text-xs text-slate-400 font-medium">14:00 - 14:50</span>
+                        <h4 class="font-bold text-slate-800 text-sm">Session 6</h4>
+                        <p class="text-xs text-slate-500 mt-0.5">이소연 (서울대학교)</p>
+                    </li>
+                    <li class="bg-slate-50 rounded-lg p-2.5 flex items-center justify-between text-xs text-slate-500 border border-slate-100">
+                        <span class="font-semibold text-slate-600"><i class="fa-solid fa-mug-hot mr-1.5 text-amber-500"></i>Coffee Break</span>
+                        <span>14:50 - 15:10</span>
+                    </li>
+                    <li class="border-l-2 border-slate-400 pl-3">
+                        <span class="text-xs text-slate-400 font-medium">15:10 - 16:00</span>
+                        <h4 class="font-bold text-slate-800 text-sm">Session 7</h4>
+                        <p class="text-xs text-slate-500 mt-0.5">Sylvain Carpentier (서울대학교)</p>
+                    </li>
+                    <li class="bg-slate-50 rounded-lg p-2.5 flex items-center justify-between text-xs text-slate-500 border border-slate-100">
+                        <span class="font-semibold text-slate-600"><i class="fa-solid fa-mug-hot mr-1.5 text-amber-500"></i>Coffee Break</span>
+                        <span>16:00 - 16:20</span>
+                    </li>
+                    <li class="border-l-2 border-slate-400 pl-3">
+                        <span class="text-xs text-slate-400 font-medium">16:20 - 17:10</span>
+                        <h4 class="font-bold text-slate-800 text-sm">Session 8</h4>
+                        <p class="text-xs text-slate-500 mt-0.5">Akito Uruno (NCTS)</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm flex flex-col justify-between">
+                <div>
                     <div class="border-b border-slate-100 pb-3 mb-4 flex justify-between items-center">
-                        <h3 class="font-bold text-lg text-snu-navy">Day 1</h3>
-                        <span class="text-xs font-semibold px-2.5 py-1 bg-snu-navy/10 text-snu-navy rounded-full">July 27 (Mon)</span>
+                        <h3 class="font-bold text-lg text-snu-navy">Day 3</h3>
+                        <span class="text-xs font-semibold px-2.5 py-1 bg-emerald-100 text-emerald-800 rounded-full">July 29 (Wed)</span>
                     </div>
                     <ul class="space-y-4">
-                        <li class="border-l-2 border-snu-gold pl-3">
-                            <span class="text-xs text-slate-400 font-medium">14:00 - 14:50</span>
-                            <h4 class="font-bold text-slate-800 text-sm">Session 1</h4>
-                            <p class="text-xs text-slate-500 mt-0.5">이승빈 (서울대학교)</p>
-                        </li>
-                        <li class="bg-slate-50 rounded-lg p-2.5 flex items-center justify-between text-xs text-slate-500 border border-slate-100">
-                            <span class="font-semibold text-slate-600"><i class="fa-solid fa-mug-hot mr-1.5 text-amber-500"></i>Coffee Break</span>
-                            <span>14:50 - 15:10</span>
-                        </li>
-                        <li class="border-l-2 border-snu-gold pl-3">
-                            <span class="text-xs text-slate-400 font-medium">15:10 - 16:00</span>
-                            <h4 class="font-bold text-slate-800 text-sm">Session 2</h4>
-                            <p class="text-xs text-slate-500 mt-0.5">이재현 (서울대학교)</p>
-                        </li>
-                        <li class="bg-slate-50 rounded-lg p-2.5 flex items-center justify-between text-xs text-slate-500 border border-slate-100">
-                            <span class="font-semibold text-slate-600"><i class="fa-solid fa-mug-hot mr-1.5 text-amber-500"></i>Coffee Break</span>
-                            <span>16:00 - 16:20</span>
-                        </li>
-                        <li class="border-l-2 border-snu-gold pl-3">
-                            <span class="text-xs text-slate-400 font-medium">16:20 - 17:10</span>
-                            <h4 class="font-bold text-slate-800 text-sm">Session 3</h4>
-                            <p class="text-xs text-slate-500 mt-0.5">오동건 (서울대학교)</p>
+                        <li class="border-l-2 border-emerald-500 pl-3">
+                            <span class="text-xs text-slate-400 font-medium">10:00 - 12:00</span>
+                            <h4 class="font-bold text-slate-800 text-sm">Free Discussion</h4>
+                            <p class="text-xs text-slate-500 mt-0.5 leading-relaxed font-light">Open discussion on representation theory and related collaborative topics.</p>
                         </li>
                     </ul>
                 </div>
+            </div>
+        </div>
+    </div>
 
-                <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm">
-                    <div class="border-b border-slate-100 pb-3 mb-4 flex justify-between items-center">
-                        <h3 class="font-bold text-lg text-snu-navy">Day 2</h3>
-                        <span class="text-xs font-semibold px-2.5 py-1 bg-snu-gold/20 text-snu-gold rounded-full">July 28 (Tue)</span>
-                    </div>
-                    <ul class="space-y-4">
-                        <li class="border-l-2 border-slate-400 pl-3">
-                            <span class="text-xs text-slate-400 font-medium">10:00 - 10:50</span>
-                            <h4 class="font-bold text-slate-800 text-sm">Session 4</h4>
-                            <p class="text-xs text-slate-500 mt-0.5">천지원 (서울대학교)</p>
-                        </li>
-                        <li class="bg-slate-50 rounded-lg p-2.5 flex items-center justify-between text-xs text-slate-500 border border-slate-100">
-                            <span class="font-semibold text-slate-600"><i class="fa-solid fa-mug-hot mr-1.5 text-amber-500"></i>Coffee Break</span>
-                            <span>10:50 - 11:10</span>
-                        </li>
-                        <li class="border-l-2 border-slate-400 pl-3">
-                            <span class="text-xs text-slate-400 font-medium">11:10 - 12:00</span>
-                            <h4 class="font-bold text-slate-800 text-sm">Session 5</h4>
-                            <p class="text-xs text-slate-500 mt-0.5">최동준 (서울대학교)</p>
-                        </li>
-                        <li class="bg-blue-50/50 rounded-xl p-3 flex flex-col items-center justify-center text-xs text-slate-500 border border-blue-100/60 my-2">
-                            <span class="font-bold text-blue-900 inline-flex items-center gap-1.5 mb-0.5">
-                                <i class="fa-solid fa-bowl-food text-blue-600"></i> Lunch Break
-                            </span>
-                            <span class="text-[10px] text-slate-400">12:00 - 14:00 (2 Hours)</span>
-                        </li>
-                        <li class="border-l-2 border-slate-400 pl-3">
-                            <span class="text-xs text-slate-400 font-medium">14:00 - 14:50</span>
-                            <h4 class="font-bold text-slate-800 text-sm">Session 6</h4>
-                            <p class="text-xs text-slate-500 mt-0.5">이소연 (서울대학교)</p>
-                        </li>
-                        <li class="bg-slate-50 rounded-lg p-2.5 flex items-center justify-between text-xs text-slate-500 border border-slate-100">
-                            <span class="font-semibold text-slate-600"><i class="fa-solid fa-mug-hot mr-1.5 text-amber-500"></i>Coffee Break</span>
-                            <span>14:50 - 15:10</span>
-                        </li>
-                        <li class="border-l-2 border-slate-400 pl-3">
-                            <span class="text-xs text-slate-400 font-medium">15:10 - 16:00</span>
-                            <h4 class="font-bold text-slate-800 text-sm">Session 7</h4>
-                            <p class="text-xs text-slate-500 mt-0.5">Sylvain Carpentier (서울대학교)</p>
-                        </li>
-                        <li class="bg-slate-50 rounded-lg p-2.5 flex items-center justify-between text-xs text-slate-500 border border-slate-100">
-                            <span class="font-semibold text-slate-600"><i class="fa-solid fa-mug-hot mr-1.5 text-amber-500"></i>Coffee Break</span>
-                            <span>16:00 - 16:20</span>
-                        </li>
-                        <li class="border-l-2 border-slate-400 pl-3">
-                            <span class="text-xs text-slate-400 font-medium">16:20 - 17:10</span>
-                            <h4 class="font-bold text-slate-800 text-sm">Session 8</h4>
-                            <p class="text-xs text-slate-500 mt-0.5">Akito Uruno (NCTS)</p>
-                        </li>
-                    </ul>
+    <div id="page-abstracts" class="tab-content hidden max-w-4xl mx-auto px-6 py-12">
+        <div class="flex items-center gap-3 mb-8 border-b border-slate-200 pb-4">
+            <i class="fa-solid fa-book-open text-2xl text-snu-navy"></i>
+            <h2 class="text-2xl font-bold text-snu-navy">Titles & Abstracts</h2>
+        </div>
+
+        <div class="space-y-6">
+            <!-- 이승빈 -->
+            <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="font-bold text-xl text-snu-navy">이승빈 <span class="text-sm text-slate-400 font-normal ml-2">| 서울대학교</span></h3>
                 </div>
+                <div class="space-y-2">
+                    <h4 class="font-semibold text-slate-800">Title: Diagrammatic Categorification of quantum $\mathfrak{sl}_2$ and Quiver Hecke Algebras</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed font-light">Abstract: Quiver Hecke algebras, also known as Khovanov-Lauda-Rouquier (KLR) algebras, provide a categorification of the negative half of quantum groups. More precisely, the split Grothendieck ring of the category of finitely generated projective modules over a given quiver Hecke algebra is isomorphic to the negative half of the corresponding quantum group. In this talk, we focus on the diagrammatic categorification of the modified quantum $\mathfrak{sl}_2$ via the graphical calculus of a 2-category, to elucidate the underlying structure and origin of the defining relations of these algebras.</p>
+                </div>
+            </div>
 
-                <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm flex flex-col justify-between">
-                    <div>
-                        <div class="border-b border-slate-100 pb-3 mb-4 flex justify-between items-center">
-                            <h3 class="font-bold text-lg text-snu-navy">Day 3</h3>
-                            <span class="text-xs font-semibold px-2.5 py-1 bg-emerald-100 text-emerald-800 rounded-full">July 29 (Wed)</span>
-                        </div>
-                        <ul class="space-y-4">
-                            <li class="border-l-2 border-emerald-500 pl-3">
-                                <span class="text-xs text-slate-400 font-medium">10:00 - 12:00</span>
-                                <h4 class="font-bold text-slate-800 text-sm">Free Discussion</h4>
-                                <p class="text-xs text-slate-500 mt-0.5 leading-relaxed font-light">Open discussion on representation theory and related collaborative topics.</p>
-                            </li>
-                        </ul>
-                    </div>
+            <!-- 이재현 -->
+            <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="font-bold text-xl text-snu-navy">이재현 <span class="text-sm text-slate-400 font-normal ml-2">| 서울대학교</span></h3>
+                </div>
+                <div class="space-y-2">
+                    <h4 class="font-semibold text-slate-800">Title: Category of Simple Affine Vertex Algebra Modules and Modularity using Characters</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed font-light">
+                        Abstract: The simple affine vertex algebra $L_k(\mathfrak{g})$ can be viewed as the simple module $L(k,0)$ of level $k$ over an affine Lie algebra, analogous to $L(0)=\mathbb{C}$ in the finite-dimensional case. While $\mathbb{C}$-Vect possesses a trivial (symmetric) modular tensor category structure, the situation for $L_k(\mathfrak{g})$-Mod is more complicated. In this presentation, first I introduce $L_k(\mathfrak{g})\text{-Mod}_{\text{ord}}$ for specific levels $k$ which has a structure of a semisimple ribbon category with modularity. Second, I provide a systematic method to determine the modularity of $L_k(\mathfrak{g})\text{-Mod}_{\text{ord}}$ by utilizing characters and modular forms. Finally, I demonstrate the extension of this method to the super case by employing supermodularity and supercharacters.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 오동건 -->
+            <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="font-bold text-xl text-snu-navy">오동건 <span class="text-sm text-slate-400 font-normal ml-2">| 서울대학교</span></h3>
+                </div>
+                <div class="space-y-2">
+                    <h4 class="font-semibold text-slate-800">Title: Finite Dimensional Representations of Quantum Affine Algebras and Symmetries of q-Characters</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed font-light">
+                        Abstract: Highest weight modules and classical character theory effectively describes finite-dimensional representations of a simple Lie algebra. This talk surveys how a parallel picture appears for quantum affine algebras. Starting with $U_q(\widehat{\mathfrak{sl}}_2)$, we introduce Drinfeld's realization, $\ell$-highest weights, and the classification of finite-dimensional irreducible modules by Drinfeld polynomials. We then explain $q$-characters as refinements of ordinary characters, both from the universal $R$-matrix and from generalized $\ell$-weight eigenspaces. Finally, we discuss how braid group actions, screening operators, and a Weyl group action on a suitable completion characterize the image of the $q$-character map.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 천지원 -->
+            <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="font-bold text-xl text-snu-navy">천지원 <span class="text-sm text-slate-400 font-normal ml-2">| 서울대학교</span></h3>
+                </div>
+                <div class="space-y-2">
+                    <h4 class="font-semibold text-slate-800">Title: A categorical approach to dual canonical basis</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed font-light">
+                        Abstract: The dual canonical basis is a distinguished basis of the quantum coordinate ring, which plays an important role in modern representation theory, quantum cluster algebras, and categorification. Despite its significance, explicit computations involving dual canonical basis elements are often difficult; even determining their multiplicative properties can be highly nontrivial. From the viewpoint of Khovanov--Lauda--Rouquier (KLR) categorification, dual canonical basis elements correspond to simple modules, while dual PBW basis elements are categorified by proper standard modules. Moreover, each simple module arises as the head of an appropriate proper standard module. This categorical realization provides a useful way to approach dual canonical basis elements through the structure of KLR modules. In this talk, I will explain this perspective and discuss how the expansion of dual canonical basis elements in the dual PBW basis can be understood from the categorical viewpoint of KLR algebras.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 최동준 -->
+            <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="font-bold text-xl text-snu-navy">최동준 <span class="text-sm text-slate-400 font-normal ml-2">| 서울대학교</span></h3>
+                </div>
+                <div class="space-y-2">
+                    <h4 class="font-semibold text-slate-800 font-serif">Title: Poisson structures of deformed $W$-algebras and classical $W$-algebras</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed font-light">
+                        Abstract: In 1985, Drinfeld and Sokolov introduced a Hamiltonian reduction of affine Lie algebras to construct Poisson structures on the space of differential operators. The resulting algebraic structures, now known as classical $W$-algebras, have been formulated and understood within the framework of Poisson vertex algebras by De Sole, Kac, and Valeri.
+                        Parallel to this differential setting, in 1998, Frenkel, Reshetikhin, and Semenov-Tian-Shansky introduced a Hamiltonian reduction of loop groups to construct Poisson structures on the space of difference operators. The resulting algebraic structure was revealed to be a $q \to 1$ limit of the deformed $W$-algebras (defined by Frenkel and Reshetikhin) in type $A$, and is conjectured for other types.
+                        In this talk, we provide an explicit algebraic realization of these deformed $W$-algebras in type $A$. Furthermore, by using the deformed Miura transformation, we establish a limit of the deformed $W$-algebras that recovers the Poisson structures of classical $W$-algebras. We conclude by discussing several future directions.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 이소연 -->
+            <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="font-bold text-xl text-snu-navy">이소연 <span class="text-sm text-slate-400 font-normal ml-2">| 서울대학교</span></h3>
+                </div>
+                <div class="space-y-2">
+                    <h4 class="font-semibold text-slate-800">Title: On simple modules of the Iwahori--Hecke algebra of type $A$ at a root of unity</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed font-light">
+                        Abstract: The Iwahori--Hecke algebra of type $A$ is a $q$-deformation of the group algebra of the symmetric group, and its representation theory depends significantly on the value of $q$. In this talk, we focus on the simple modules of the Hecke algebra at a primitive $e$-th root of unity. Although these modules are parametrized by $e$-regular partitions, their dimensions remain poorly understood. We first review lower bounds on their dimensions in terms of $e$-restricted tableaux. We then discuss the LLT algorithm, which can be used to compute decomposition numbers. Finally, using specialization functors, we suggest a possible interpretation of the preceding developments in terms of modules of the $0$-Hecke algebra.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Sylvain Carpentier -->
+            <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="font-bold text-xl text-snu-navy">Sylvain Carpentier <span class="text-sm text-slate-400 font-normal ml-2">| 서울대학교</span></h3>
+                </div>
+                <div class="space-y-2">
+                    <h4 class="font-semibold text-slate-800">Title: Lax Difference Operators and Integrable Lattices.</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed font-light">
+                        Abstract: Lax operators provide a unifying framework for describing integrable systems, from differential equations such as Korteweg-de Vries to lattice hierarchies such as Toda. In this talk, we first review scalar and matrix Lax differential operators and their relation to classical affine $W$-algebras. We then explain how scalar Lax difference operators lead to a rich class of integrable lattice hierarchies and discuss recent results on the classification of finite-band Lax hierarchies. The matrix difference case is illustrated through the Pfaff lattice and its relation to the 2D Toda hierarchy. Finally, we emphasize that differential and difference hierarchies are both a manifestation of a deeper structure called Hirota bilinear equations. This perspective connects the tau functions of some integrable systems with representation theory.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Akito Uruno -->
+            <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="font-bold text-xl text-snu-navy">Akito Uruno <span class="text-sm text-slate-400 font-normal ml-2">| NCTS</span></h3>
+                </div>
+                <div class="space-y-2">
+                    <h4 class="font-semibold text-slate-800">Title: On the Mullineux Conjugation</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed font-light">
+                        Abstract: Let $S_d$ be the symmetric group on $n$ letters, and let $D^\lambda$ denote the irreducible $kS_d$-module corresponding to a $p$-restricted partition $\lambda$ of $d$ over a field $k$ of characteristic $p$. In the representation theory of symmetric groups, describing the combinatorial label of the irreducible module obtained by tensoring $D^\lambda$ with the one-dimensional sign representation—denoted as $D^\lambda \otimes \text{sgn}$—has long been a fundamental problem. In 1979, Mullineux introduced an algorithmic bijection on $p$-restricted partitions and conjectured that $D^\lambda \otimes \text{sgn} \cong D^{M(\lambda)}$. In this talk, we review the proof of the Mullineux conjecture following the framework established by Brundan and Kujawa (2003). The core of this approach lies in a superalgebra analogue of Schur-Weyl duality, which connects the representations of $S_d$ to those of the supergroup $GL(n | n)$.
+                    </p>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div id="page-abstracts" class="tab-content hidden max-w-4xl mx-auto px-6 py-12">
-            <div class="flex items-center gap-3 mb-8 border-b border-slate-200 pb-4">
-                <i class="fa-solid fa-book-open text-2xl text-snu-navy"></i>
-                <h2 class="text-2xl font-bold text-snu-navy">Titles & Abstracts</h2>
-            </div>
+</main>
 
-            <div class="space-y-6">
-                <!-- 이승빈 -->
-                <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="font-bold text-xl text-snu-navy">이승빈 <span class="text-sm text-slate-400 font-normal ml-2">| 서울대학교</span></h3>
-                    </div>
-                    <div class="space-y-2">
-                        <h4 class="font-semibold text-slate-800">Title: Diagrammatic Categorification of quantum $\mathfrak{sl}_2$ and Quiver Hecke Algebras</h4>
-                        <p class="text-sm text-slate-500 leading-relaxed font-light">Abstract: Quiver Hecke algebras, also known as Khovanov-Lauda-Rouquier (KLR) algebras, provide a categorification of the negative half of quantum groups. More precisely, the split Grothendieck ring of the category of finitely generated projective modules over a given quiver Hecke algebra is isomorphic to the negative half of the corresponding quantum group. In this talk, we focus on the diagrammatic categorification of the modified quantum $\mathfrak{sl}_2$ via the graphical calculus of a 2-category, to elucidate the underlying structure and origin of the defining relations of these algebras.</p>
-                    </div>
-                </div>
+<footer class="bg-slate-900 py-4 text-center">
+</footer>
 
-                <!-- 이재현 -->
-                <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="font-bold text-xl text-snu-navy">이재현 <span class="text-sm text-slate-400 font-normal ml-2">| 서울대학교</span></h3>
-                    </div>
-                    <div class="space-y-2">
-                        <h4 class="font-semibold text-slate-800">Title: Category of Simple Affine Vertex Algebra Modules and Modularity using Characters</h4>
-                        <p class="text-sm text-slate-500 leading-relaxed font-light">
-                            Abstract: The simple affine vertex algebra $L_k(\mathfrak{g})$ can be viewed as the simple module $L(k,0)$ of level $k$ over an affine Lie algebra, analogous to $L(0)=\mathbb{C}$ in the finite-dimensional case. While $\mathbb{C}$-Vect possesses a trivial (symmetric) modular tensor category structure, the situation for $L_k(\mathfrak{g})$-Mod is more complicated. In this presentation, first I introduce $L_k(\mathfrak{g})\text{-Mod}_{\text{ord}}$ for specific levels $k$ which has a structure of a semisimple ribbon category with modularity. Second, I provide a systematic method to determine the modularity of $L_k(\mathfrak{g})\text{-Mod}_{\text{ord}}$ by utilizing characters and modular forms. Finally, I demonstrate the extension of this method to the super case by employing supermodularity and supercharacters.
-                        </p>
-                    </div>
-                </div>
+<script>
+    function switchTab(tabId) {
+        // Hide all tab contents
+        const contents = document.querySelectorAll('.tab-content');
+        contents.forEach(content => {
+            content.classList.add('hidden');
+        });
 
-                <!-- 오동건 -->
-                <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="font-bold text-xl text-snu-navy">오동건 <span class="text-sm text-slate-400 font-normal ml-2">| 서울대학교</span></h3>
-                    </div>
-                    <div class="space-y-2">
-                        <h4 class="font-semibold text-slate-800">Title: Finite Dimensional Representations of Quantum Affine Algebras and Symmetries of q-Characters</h4>
-                        <p class="text-sm text-slate-500 leading-relaxed font-light">
-                            Abstract: Highest weight modules and classical character theory effectively describes finite-dimensional representations of a simple Lie algebra. This talk surveys how a parallel picture appears for quantum affine algebras. Starting with $U_q(\widehat{\mathfrak{sl}}_2)$, we introduce Drinfeld's realization, $\ell$-highest weights, and the classification of finite-dimensional irreducible modules by Drinfeld polynomials. We then explain $q$-characters as refinements of ordinary characters, both from the universal $R$-matrix and from generalized $\ell$-weight eigenspaces. Finally, we discuss how braid group actions, screening operators, and a Weyl group action on a suitable completion characterize the image of the $q$-character map.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- 천지원 -->
-                <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="font-bold text-xl text-snu-navy">천지원 <span class="text-sm text-slate-400 font-normal ml-2">| 서울대학교</span></h3>
-                    </div>
-                    <div class="space-y-2">
-                        <h4 class="font-semibold text-slate-800">Title: A categorical approach to dual canonical basis</h4>
-                        <p class="text-sm text-slate-500 leading-relaxed font-light">
-                            Abstract: The dual canonical basis is a distinguished basis of the quantum coordinate ring, which plays an important role in modern representation theory, quantum cluster algebras, and categorification. Despite its significance, explicit computations involving dual canonical basis elements are often difficult; even determining their multiplicative properties can be highly nontrivial. From the viewpoint of Khovanov--Lauda--Rouquier (KLR) categorification, dual canonical basis elements correspond to simple modules, while dual PBW basis elements are categorified by proper standard modules. Moreover, each simple module arises as the head of an appropriate proper standard module. This categorical realization provides a useful way to approach dual canonical basis elements through the structure of KLR modules. In this talk, I will explain this perspective and discuss how the expansion of dual canonical basis elements in the dual PBW basis can be understood from the categorical viewpoint of KLR algebras.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- 최동준 -->
-                <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="font-bold text-xl text-snu-navy">최동준 <span class="text-sm text-slate-400 font-normal ml-2">| 서울대학교</span></h3>
-                    </div>
-                    <div class="space-y-2">
-                        <h4 class="font-semibold text-slate-800 font-serif">Title: Poisson structures of deformed $W$-algebras and classical $W$-algebras</h4>
-                        <p class="text-sm text-slate-500 leading-relaxed font-light">
-                            Abstract: In 1985, Drinfeld and Sokolov introduced a Hamiltonian reduction of affine Lie algebras to construct Poisson structures on the space of differential operators. The resulting algebraic structures, now known as classical $W$-algebras, have been formulated and understood within the framework of Poisson vertex algebras by De Sole, Kac, and Valeri.
-                            Parallel to this differential setting, in 1998, Frenkel, Reshetikhin, and Semenov-Tian-Shansky introduced a Hamiltonian reduction of loop groups to construct Poisson structures on the space of difference operators. The resulting algebraic structure was revealed to be a $q \to 1$ limit of the deformed $W$-algebras (defined by Frenkel and Reshetikhin) in type $A$, and is conjectured for other types.
-                            In this talk, we provide an explicit algebraic realization of these deformed $W$-algebras in type $A$. Furthermore, by using the deformed Miura transformation, we establish a limit of the deformed $W$-algebras that recovers the Poisson structures of classical $W$-algebras. We conclude by discussing several future directions.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- 이소연 -->
-                <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="font-bold text-xl text-snu-navy">이소연 <span class="text-sm text-slate-400 font-normal ml-2">| 서울대학교</span></h3>
-                    </div>
-                    <div class="space-y-2">
-                        <h4 class="font-semibold text-slate-800">Title: On simple modules of the Iwahori--Hecke algebra of type $A$ at a root of unity</h4>
-                        <p class="text-sm text-slate-500 leading-relaxed font-light">
-                            Abstract: The Iwahori--Hecke algebra of type $A$ is a $q$-deformation of the group algebra of the symmetric group, and its representation theory depends significantly on the value of $q$. In this talk, we focus on the simple modules of the Hecke algebra at a primitive $e$-th root of unity. Although these modules are parametrized by $e$-regular partitions, their dimensions remain poorly understood. We first review lower bounds on their dimensions in terms of $e$-restricted tableaux. We then discuss the LLT algorithm, which can be used to compute decomposition numbers. Finally, using specialization functors, we suggest a possible interpretation of the preceding developments in terms of modules of the $0$-Hecke algebra.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Sylvain Carpentier -->
-                <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="font-bold text-xl text-snu-navy">Sylvain Carpentier <span class="text-sm text-slate-400 font-normal ml-2">| 서울대학교</span></h3>
-                    </div>
-                    <div class="space-y-2">
-                        <h4 class="font-semibold text-slate-800">Title: Lax Difference Operators and Integrable Lattices.</h4>
-                        <p class="text-sm text-slate-500 leading-relaxed font-light">
-                            Abstract: Lax operators provide a unifying framework for describing integrable systems, from differential equations such as Korteweg-de Vries to lattice hierarchies such as Toda. In this talk, we first review scalar and matrix Lax differential operators and their relation to classical affine $W$-algebras. We then explain how scalar Lax difference operators lead to a rich class of integrable lattice hierarchies and discuss recent results on the classification of finite-band Lax hierarchies. The matrix difference case is illustrated through the Pfaff lattice and its relation to the 2D Toda hierarchy. Finally, we emphasize that differential and difference hierarchies are both a manifestation of a deeper structure called Hirota bilinear equations. This perspective connects the tau functions of some integrable systems with representation theory.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Akito Uruno -->
-                <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="font-bold text-xl text-snu-navy">Akito Uruno <span class="text-sm text-slate-400 font-normal ml-2">| NCTS</span></h3>
-                    </div>
-                    <div class="space-y-2">
-                        <h4 class="font-semibold text-slate-800">Title: On the Mullineux Conjugation</h4>
-                        <p class="text-sm text-slate-500 leading-relaxed font-light">
-                            Abstract: Let $S_d$ be the symmetric group on $n$ letters, and let $D^\lambda$ denote the irreducible $kS_d$-module corresponding to a $p$-restricted partition $\lambda$ of $d$ over a field $k$ of characteristic $p$. In the representation theory of symmetric groups, describing the combinatorial label of the irreducible module obtained by tensoring $D^\lambda$ with the one-dimensional sign representation—denoted as $D^\lambda \otimes \text{sgn}$—has long been a fundamental problem. In 1979, Mullineux introduced an algorithmic bijection on $p$-restricted partitions and conjectured that $D^\lambda \otimes \text{sgn} \cong D^{M(\lambda)}$. In this talk, we review the proof of the Mullineux conjecture following the framework established by Brundan and Kujawa (2003). The core of this approach lies in a superalgebra analogue of Schur-Weyl duality, which connects the representations of $S_d$ to those of the supergroup $GL(n | n)$.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </main>
-
-    <footer class="bg-slate-900 py-4 text-center">
-    </footer>
-
-    <script>
-        function switchTab(tabId) {
-            // Hide all tab contents
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(content => {
-                content.classList.add('hidden');
-            });
-
-            // Show active tab content
-            const activePage = document.getElementById('page-' + tabId);
-            if (activePage) {
-                activePage.classList.remove('hidden');
-            }
-
-            // Reset navigation colors
-            const navIds = ['main', 'poster', 'timetable', 'abstracts'];
-            navIds.forEach(id => {
-                const navBtn = document.getElementById('nav-' + id);
-                if (navBtn) {
-                    if (id === tabId) {
-                        navBtn.classList.remove('text-slate-300');
-                        navBtn.classList.add('text-snu-gold');
-                    } else {
-                        navBtn.classList.remove('text-snu-gold');
-                        navBtn.classList.add('text-slate-300');
-                    }
-                }
-            });
-
-            // Scroll back to top on switch
-            window.scrollTo({ top: 0, behavior: 'instant' });
+        // Show active tab content
+        const activePage = document.getElementById('page-' + tabId);
+        if (activePage) {
+            activePage.classList.remove('hidden');
         }
-    </script>
-</body>
+
+        // Reset navigation colors
+        const navIds = ['main', 'poster', 'timetable', 'abstracts'];
+        navIds.forEach(id => {
+            const navBtn = document.getElementById('nav-' + id);
+            if (navBtn) {
+                if (id === tabId) {
+                    navBtn.classList.remove('text-slate-300');
+                    navBtn.classList.add('text-snu-gold');
+                } else {
+                    navBtn.classList.remove('text-snu-gold');
+                    navBtn.classList.add('text-slate-300');
+                }
+            }
+        });
+
+        // Scroll back to top on switch
+        window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+</script>
+</body> 
 </html>
