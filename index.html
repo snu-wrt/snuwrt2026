@@ -67,7 +67,7 @@
         
         <nav class="flex items-center gap-3 md:gap-6 text-xs md:text-sm font-medium shrink-0">
             <button id="nav-main" onclick="switchTab('main')" class="text-snu-gold hover:text-white transition-colors cursor-pointer">Main</button>
-            <button id="nav-poster" onclick="switchTab('poster')" class="text-slate-300 hover:text-white transition-colors cursor-pointer">Poster</button>
+            <button id="nav-poster" onclick="switchTab('poster')" class="text-slate-300 hover:text-white transition-colors cursor-pointer">Poster/Photo</button>
             <button id="nav-timetable" onclick="switchTab('timetable')" class="text-slate-300 hover:text-white transition-colors cursor-pointer">Timetable</button>
             <button id="nav-abstracts" onclick="switchTab('abstracts')" class="text-slate-300 hover:text-white transition-colors cursor-pointer whitespace-nowrap">Titles & Abstracts</button>
         </nav>
@@ -240,7 +240,7 @@
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 border-b border-slate-200 pb-4">
             <div class="flex items-center gap-3">
                 <i class="fa-solid fa-file-image text-2xl text-snu-navy"></i>
-                <h2 class="text-2xl font-bold text-snu-navy">Workshop Poster</h2>
+                <h2 class="text-2xl font-bold text-snu-navy">Workshop Poster & Photo</h2>
             </div>
             <a href="Poster.pdf" target="_blank" class="inline-flex items-center justify-center gap-2 bg-snu-navy hover:bg-snu-blue text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition-all shadow-sm hover:shadow">
                 <i class="fa-solid fa-file-arrow-down text-snu-gold"></i>
@@ -248,13 +248,25 @@
             </a>
         </div>
 
-        <div class="bg-white rounded-3xl p-6 shadow-md border border-slate-200 text-center max-w-2xl mx-auto">
-            <div class="relative group overflow-hidden rounded-2xl border border-slate-100 bg-slate-50">
-                <img src="images/poster-1.png" alt="SNU Workshop for Representation Theory 2026 Poster" class="w-full h-auto object-contain transition-transform duration-300 group-hover:scale-[1.005]">
-                <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <a href="Poster.pdf" target="_blank" class="bg-white text-snu-navy font-bold px-6 py-3 rounded-xl shadow-lg flex items-center gap-2 text-sm hover:bg-slate-50 transition-colors">
-                        <i class="fa-solid fa-magnifying-glass-plus"></i> Open Full Vector PDF
-                    </a>
+        <div class="space-y-8 max-w-2xl mx-auto">
+            <!-- Poster -->
+            <div class="bg-white rounded-3xl p-6 shadow-md border border-slate-200 text-center">
+                <h3 class="text-lg font-bold text-snu-navy mb-4">Poster</h3>
+                <div class="relative group overflow-hidden rounded-2xl border border-slate-100 bg-slate-50">
+                    <img src="images/poster-1.png" alt="SNU Workshop for Representation Theory 2026 Poster" class="w-full h-auto object-contain transition-transform duration-300 group-hover:scale-[1.005]">
+                    <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <a href="Poster.pdf" target="_blank" class="bg-white text-snu-navy font-bold px-6 py-3 rounded-xl shadow-lg flex items-center gap-2 text-sm hover:bg-slate-50 transition-colors">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i> Open Full Vector PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photo -->
+            <div class="bg-white rounded-3xl p-6 shadow-md border border-slate-200 text-center">
+                <h3 class="text-lg font-bold text-snu-navy mb-4">Group Photo</h3>
+                <div class="overflow-hidden rounded-2xl border border-slate-100 bg-slate-50">
+                    <img src="photo.JPG" alt="Workshop Group Photo" class="w-full h-auto object-contain">
                 </div>
             </div>
         </div>
